@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const {ObjectId}=mongoose.Schema.Types
+const mongoose = require("mongoose")
+const {ObjectId} = mongoose.Schema.Types
 
 const postSchema = new mongoose.Schema({
     title:{
@@ -14,10 +14,10 @@ const postSchema = new mongoose.Schema({
         type:String,
         default:"no photo"
     },
-    postedBy:{
+    postedby:{
         type:ObjectId,
-        ref:'User'
+        ref:"User"
     }
 
 })
-mongoose.model('Post',postSchema);
+mongoose.model("Post",postSchema);
