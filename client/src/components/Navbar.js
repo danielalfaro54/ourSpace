@@ -8,9 +8,11 @@ const Navbar= ()=>{
         
       <Link to="/" className="brand-logo left b">The Social Network</Link>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
-        <li><Link to="/login">Login</Link></li>
+      <li><Link to="/create">Publicar</Link></li>
+        <li><Link to="/signin">Login</Link></li>
         <li><Link to="/signup">Sign Up</Link></li>
         <li><Link to="/profile">Profile</Link></li>
+        
       </ul>
     </div>
   </nav>)

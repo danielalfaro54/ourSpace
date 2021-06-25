@@ -2,9 +2,10 @@ import './App.css';
 import Navbar from './components/Navbar';
 import {BrowserRouter,Route} from 'react-router-dom'
 import {Home} from './components/screens/Home'
-import {Login} from './components/screens/Login'
+import {Signin} from './components/screens/Signin'
 import {Profile} from './components/screens/Profile'
 import {Signup} from './components/screens/Signup'
+import {Createpost} from './components/screens/Createpost'
 
 function App() {
   return (
@@ -13,14 +14,17 @@ function App() {
     <Route exact path='/'>
       <Home/>
     </Route>
-    <Route path = '/login'>
-      <Login/>
+    <Route path = '/signin'>
+      <Signin/>
     </Route>
     <Route path = '/signup'>
       <Signup/>
     </Route>
     <Route path = '/profile'>
       <Profile/>
+    </Route>
+    <Route path = '/create'>
+      <Createpost/>
     </Route>
     </BrowserRouter>
   

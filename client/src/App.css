@@ -1,4 +1,23 @@
 .b{
   margin-left: 4%;
 }
+.mycard{
+  margin-top: 30px;
+}
+.auth-card{
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: 10px auto
+}
+.input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
 
+   .home-card{
+     max-width: 400px;
+     height: max-content;
+     margin: 25px auto;
+
+   }
