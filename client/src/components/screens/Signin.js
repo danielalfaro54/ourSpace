@@ -19,8 +19,8 @@ export const Signin= () => {
         },
         body:JSON.stringify(
             {
-                email:email,
-                password:password
+                email,
+                password
             }
         )
     }).then(res=>res.json()).then(data=>{
