@@ -23,10 +23,13 @@ export const Signin= () => {
                 password
             }
         )
-    }).then(res=>res.json()).then(data=>{
+    }).then(res=>res.json())
+    .then(data=>{
         if(data.error){
             M.toast({html:data.error})
         }else{
+            localStorage.setItem('jwt',data.token)
+            localStorage.setItem('user',JSON.stringify(data.user))
             M.toast({html:"Ingresó correctamente"})
             history.push("/")
         }

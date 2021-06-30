@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import react, { useEffect, useState } from 'react';
 import M from 'materialize-css'
 import { useHistory } from 'react-router-dom'
 
@@ -9,43 +9,51 @@ export const Createpost = () => {
     const [url, seturl] = useState("")
     const history = useHistory()
 
+    useEffect(() => {
+        if(url) {
+            fetch("/createpost",{
+                method:"post",
+                headers:{
+                    "Content-Type":"application/json",
+                    "Authorization":"Bearer " + localStorage.getItem("jwt")
+                },
+                body:JSON.stringify(
+                    {
+                        title,
+                        body,
+                        pic:url
+                    }
+                )
+            }).then(res=>res.json()).then(data=>{
+                if(data.error){
+    
+                    M.toast({html:data.error})
+                }else{
+                    M.toast({html:"La publicación fue realizada"})
+                    history.push("/")
+                }
+            }).catch(err=>{
+                console.log(err)
+            })
+        }
+    }, [url])
+
     const postDetails=()=>{
         const data = new FormData()
         data.append("file",image)
         data.append("upload_preset","SocialNetwork9")
         data.append("cloud_name","danielalfa98")
+        
         fetch("https://api.cloudinary.com/v1_1/danielalfa98/image/upload",{
             method:"post",
             body:data
         }).then(res=>res.json())
         .then(data=>{
-            seturl(data.url)
+             seturl(data.url)
         }).catch(err=>{
             console.log(err);
         })
-        fetch("/createpost",{
-            method:"post",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify(
-                {
-                    title,
-                    body,
-                    pic:url
-                }
-            )
-        }).then(res=>res.json()).then(data=>{
-            if(data.error){
-
-                M.toast({html:data.error})
-            }else{
-                M.toast({html:"La publicación fue realizada"})
-                history.push("/")
-            }
-        }).catch(err=>{
-            console.log(err)
-        })
+        
     }
 
     return (
