@@ -1,69 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 export const Home = () => {
+    const [data,setData] = useState([])
+
+    useEffect(() => {
+        fetch('/allpost',{
+            headers:{
+                "Authorization":"Bearer " + localStorage.getItem("jwt")
+            }
+        }).then(res => res.json())
+        .then(result=>{
+            console.log(result)
+            setData(result)
+        })
+    })
     return (
         <div className="home">
-            <div className= "card home-card">
-                <h5>John Doe</h5>
-                <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1622495548447-b6c93692f419?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw3OHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/> 
-                </div>
-                <div className="card-content">
-                <i class="material-icons">thumb_up</i>
-                    <h6>Title</h6>
-                    <p>This is a great post example</p>
-                    <input type= "text" placeholder ="add a comment"/>
+            {data.map(item=>{
+            return(
+                <div className= "card home-card" key={item._id}>
+                    <h5>{item.postedby.name}</h5>
+                    <div className="card-image">
+                    <img src={item.photo}/>
+                    </div>
+                        <div className="card-content">
+                            <i class="material-icons">thumb_up</i>
+                            <h6>{item.title}</h6>
+                            <p>{item.body}</p>
+                                <input type= "text" placeholder ="add a comment"/>
 
-                </div>
-            </div>
-            <div className= "card home-card">
-                <h5>John Doe</h5>
-                <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1622495548447-b6c93692f419?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw3OHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/> 
-                </div>
-                <div className="card-content">
-                    <h6>Title</h6>
-                    <p>This is a great post example</p>
-                    <input type= "text" placeholder ="add a comment"/>
+                    </div>
+                </div> 
+            )
 
-                </div>
-            </div>
-            <div className= "card home-card">
-                <h5>John Doe</h5>
-                <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1622495548447-b6c93692f419?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw3OHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/> 
-                </div>
-                <div className="card-content">
-                    <h6>Title</h6>
-                    <p>This is a great post example</p>
-                    <input type= "text" placeholder ="add a comment"/>
-
-                </div>
-            </div>
-            <div className= "card home-card">
-                <h5>John Doe</h5>
-                <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1622495548447-b6c93692f419?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw3OHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/> 
-                </div>
-                <div className="card-content">
-                    <h6>Title</h6>
-                    <p>This is a great post example</p>
-                    <input type= "text" placeholder ="add a comment"/>
-
-                </div>
-            </div>
-            <div className= "card home-card">
-                <h5>John Doe</h5>
-                <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1622495548447-b6c93692f419?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw3OHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/> 
-                </div>
-                <div className="card-content">
-                    <h6>Title</h6>
-                    <p>This is a great post example</p>
-                    <input type= "text" placeholder ="add a comment"/>
-
-                </div>
-            </div>
+        })}
+            
         </div>
     )
 }
