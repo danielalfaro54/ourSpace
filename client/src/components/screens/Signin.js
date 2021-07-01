@@ -53,7 +53,7 @@ export const Signin= () => {
            }}
            />
            <input
-           type='text'
+           type='password'
            placeholder='Contraseña'
            value= {password}
            onChange = {(e)=>{
