@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import {UserContext} from '../../App'
+import 'semantic-ui-css/semantic.min.css'
+import { Icon } from 'semantic-ui-react'
 
 export const Home = () => {
     const [data,setData] = useState([])
+    const {state,dispatch}= useContext(UserContext)
 
     useEffect(() => {
         fetch('/allpost',{
@@ -14,6 +18,58 @@ export const Home = () => {
             setData(result)
         })
     })
+
+    const likePost = (id)=>{
+        fetch('/like',{
+            method: "put",
+            headers: {
+                "Content-Type":"application/json",
+                "Authorization":"Bearer "+localStorage.getItem("jwt")
+            },
+            body:JSON.stringify({
+                postId:id
+            })
+        }).then(res=>res.json())
+        .then(result=>{
+            const newData = data.map(item=>{
+                if(item._id==result._id){
+                    return result
+                }else{
+                    return item
+                }
+            })
+            setData(newData)
+         }).catch(err=>{
+             console.log(err)
+        })
+    }
+
+    const unlikePost = (id)=>{
+        fetch('/unlike',{
+            method: "put",
+            headers: {
+                "Content-Type":"application/json",
+                "Authorization":"Bearer "+localStorage.getItem("jwt")
+            },
+            body:JSON.stringify({
+                postId:id
+            })
+        }).then(res=>res.json())
+        .then(result=>{
+           // console.log(result);
+           const newData = data.map(item=>{
+               if(item._id==result._id){
+                   return result
+               }else{
+                   return item
+               }
+           })
+           setData(newData)
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+
     return (
         <div className="home">
             {data.map(item=>{
@@ -24,10 +80,22 @@ export const Home = () => {
                     <img src={item.photo}/>
                     </div>
                         <div className="card-content">
-                            <i class="material-icons">thumb_up</i>
-                            <h6>{item.title}</h6>
-                            <p>{item.body}</p>
-                                <input type= "text" placeholder ="add a comment"/>
+                            {item.likes.includes(state._id)
+                            ? 
+                                <Icon name="thumbs up" size='big'
+                                onClick={()=>{
+                                    unlikePost(item._id)
+                                }}></Icon>
+                            :
+                                <Icon name="thumbs up outline" size='big'
+                                onClick={()=>{
+                                    likePost(item._id)
+                                }}></Icon>
+                            }
+                                <h6>{item.likes.length} likes</h6>
+                                <h6>{item.title}</h6>
+                                <p>{item.body}</p>
+                                    <input type= "text" placeholder ="add a comment"/>
 
                     </div>
                 </div> 
