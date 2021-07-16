@@ -94,4 +94,23 @@ router.put('/like',requireLogin,(req,res)=>{
 //     })
 // })
 
+router.delete("/deletepost/:postId",requireLogin,(req,res)=>{
+    Post.findOne({_id:req.params.postId})
+    .populate("postedby","_id")
+    .exec((err,post)=>{
+        if(err||!post){
+            return res.status(422).json({error:err})
+        }
+        if(post.postedby._id.toString()=== req.user._id.toString()){
+            post.remove()
+            .then(result=>{
+                res.json(result)
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+        }
+    })
+})
+
 module.exports = router

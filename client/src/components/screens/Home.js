@@ -19,6 +19,23 @@ export const Home = () => {
         })
     })
 
+    const deletePost = (postId)=>{
+        fetch(`/deletepost/${postId}`,{
+        method: "delete",
+        headers: 
+        {
+            "Authorization":"Bearer " + localStorage.getItem("jwt")
+        }
+    }).then(res=>res.json())
+    .then(result=>{
+        console.log(result)
+        const newData = data.filter(item=>{
+            return item._id!== result.id
+        })
+        setData(newData)
+    })
+}
+
     const likePost = (id)=>{
         fetch('/like',{
             method: "put",
@@ -71,7 +88,7 @@ export const Home = () => {
         })
     }
 
-    // const makeComment = (text,postId) =>{
+    // const makeComment = (text,postId)=>{
     //     fetch('/comment',{
     //         method:"put",
     //         headers:{
@@ -107,7 +124,13 @@ export const Home = () => {
             {data.map(item=>{
             return(
                 <div className= "card home-card" key={item._id}>
-                    <h5>{item.postedby.name}</h5>
+                    <h5>{item.postedby.name}
+                    <Icon name="delete" style={{float:"right"}} size='large'//small
+                        onClick={()=>{
+                            deletePost(item._id)
+                    }}></Icon>
+                    </h5>
+
                     <div className="card-image">
                     <img src={item.photo}/>
                     </div>
