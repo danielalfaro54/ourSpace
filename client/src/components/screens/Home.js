@@ -28,7 +28,7 @@ export const Home = () => {
         }
     }).then(res=>res.json())
     .then(result=>{
-        console.log(result)
+        
         const newData = data.filter(item=>{
             return item._id!== result.id
         })
