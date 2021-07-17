@@ -4,7 +4,7 @@ import {useParams} from 'react-router-dom'
 
 export const UserProfile= () => {
     const {state,dispatch} = useContext(UserContext)
-    const[mypics,setPics] = useState([])
+    const[userProfile,setUserProfile] = useState(null)
     const{userid} = useParams()
 
     console.log(userid)
@@ -16,6 +16,7 @@ export const UserProfile= () => {
             }).then(res=>res.json())
             .then(result=>{
                 console.log(result)
+                setmyProfile(result)
             })
         },[] )
     return (
