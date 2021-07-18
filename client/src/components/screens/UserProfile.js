@@ -1,11 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../App'
 import {useParams} from 'react-router-dom'
+import { initialState } from '../../reducers/userReducer'
 
 export const UserProfile= () => {
     const {state,dispatch} = useContext(UserContext)
-    const[userProfile,setUserProfile] = useState(null)
+    const[Profile,setProfile] = useState()
+    const[userProfile,setUserProfile] = useState("")
+    const[userEmail,setUserEmail] = useState('')
     const{userid} = useParams()
+    const[posts,setposts] = useState([])
 
     console.log(userid)
     useEffect(()=>{
@@ -16,11 +20,20 @@ export const UserProfile= () => {
             }).then(res=>res.json())
             .then(result=>{
                 console.log(result)
-                setmyProfile(result)
+                setUserProfile(result.user.name)
+                setUserEmail(result.user.email)
+                console.log(userProfile)
+                setProfile(result.posts.length)
+                setposts(result.posts)
+
             })
         },[] )
+        
     return (
-        <div>
+        <>
+        {
+            posts?
+            <div>
             <div style={{
                 display: "flex",
                 justifyContent: "space-around",
@@ -33,13 +46,14 @@ export const UserProfile= () => {
             ></img>
                 </div>
                 <div>
-                    <h5>{state?state.name:"loading"}</h5>
+                    <h5>{userProfile}</h5>
+                    <h5>{userEmail}</h5>
                     <div style={{
                         display: "flex",
                         justifyContent: "space-around",
                         width: "108%"
                     }}>
-                        <h6>14 posts</h6>
+                        <h6>{Profile} publicaciones</h6>
                         <h6>30 seguidores</h6>
                         <h6>30 siguiendo</h6>
 
@@ -49,7 +63,7 @@ export const UserProfile= () => {
         
         <div className ="postslist">
             {
-                mypics.map(item=>{
+                posts.map(item=>{
                     return(
                         <img style={{width:"400px", height: "400px"}} key={item._id} className ="item" src= {item.photo}/>
                     )
@@ -57,5 +71,11 @@ export const UserProfile= () => {
             }
         </div>
         </div>
+
+            :
+            "..."
+        }
+        
+        </>
     )
 }

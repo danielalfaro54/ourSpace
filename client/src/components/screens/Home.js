@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import {UserContext} from '../../App'
 import 'semantic-ui-css/semantic.min.css'
 import { Icon } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 export const Home = () => {
     const [data,setData] = useState([])
@@ -124,7 +125,9 @@ export const Home = () => {
             {data.map(item=>{
             return(
                 <div className= "card home-card" key={item._id}>
-                    <h5>{item.postedby.name}
+                    <h5><Link to={"/profile/" + item.postedby._id}>
+                        {item.postedby.name}
+                    </Link>
                     <Icon name="delete" style={{float:"right"}} size='large'//small
                         onClick={()=>{
                             deletePost(item._id)

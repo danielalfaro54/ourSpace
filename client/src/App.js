@@ -36,7 +36,7 @@ const Routing = ()=>{
         <Route path = '/signup'>
           <Signup/>
         </Route>
-        <Route path = '/profile'>
+        <Route exact path = '/profile'>
           <Profile/>
         </Route>
         <Route path = '/create'>

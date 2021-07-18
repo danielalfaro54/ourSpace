@@ -7,7 +7,7 @@ const User = mongoose.model('User')
 
 router.get('/user/:id',requireLogin,(req,res)=>{
     User.findOne({_id:req.params.id})
-    .select('-password')
+    .select("-password")
     .then(user=>{
         Post.find({postedby:req.params.id})
         .populate("postedby","_id name")
