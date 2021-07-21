@@ -4,6 +4,7 @@ import {useParams} from 'react-router-dom'
 import { initialState } from '../../reducers/userReducer'
 
 export const UserProfile= () => {
+    const {Prof, setProf} = useState(null)
     const {state,dispatch} = useContext(UserContext)
     const[Profile,setProfile] = useState()
     const[userProfile,setUserProfile] = useState("")
@@ -22,13 +23,42 @@ export const UserProfile= () => {
                 console.log(result)
                 setUserProfile(result.user.name)
                 setUserEmail(result.user.email)
-                console.log(userProfile)
+                //console.log(userProfile)
                 setProfile(result.posts.length)
                 setposts(result.posts)
+                setProf(result)
 
             })
         },[] )
         
+        const followUser = () => {
+            fetch('/follow',{
+                method:"put",
+                headers:
+                {
+                    "Content-Type":"application/json",
+                    "Authorization":"Bearer " + localStorage.getItem('jwt')
+                },
+                body:JSON.stringify({
+                    followId:userid
+                })
+            }).then(res=>res.json())
+            .then(data=>{
+                dispatch({type:"UPDATE",payload:{following:data.following,followers:data.followers}})
+                localStorage.setItem("user",JSON.stringify(data))
+                setProf((prevState)=>{
+                    console.log(Prof);
+                   return { user:{
+                        ...prevState.user,
+                        followers:[...prevState.user.followers,data._id]
+
+                    }
+                }
+                })
+
+            })
+        }
+
     return (
         <>
         {
@@ -47,6 +77,10 @@ export const UserProfile= () => {
                 </div>
                 <div>
                     <h5>{userProfile}</h5>
+                    <button onClick= {()=>followUser()} className="btn waves-effect waves-light" type="submit" name="action">Seguir
+    <i className="material-icons right"
+    >plus</i>
+        </button>
                     <h5>{userEmail}</h5>
                     <div style={{
                         display: "flex",
@@ -54,7 +88,7 @@ export const UserProfile= () => {
                         width: "108%"
                     }}>
                         <h6>{Profile} publicaciones</h6>
-                        <h6>30 seguidores</h6>
+                        <h6>{Prof.user === undefined?"...":Prof.user.followers.length} seguidores</h6>
                         <h6>30 siguiendo</h6>
 
                     </div>
