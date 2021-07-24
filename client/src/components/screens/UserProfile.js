@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../App'
 import {useParams} from 'react-router-dom'
-import { initialState } from '../../reducers/userReducer'
+//import { initialState } from '../../reducers/userReducer'
 
 export const UserProfile= () => {
-    const {Prof, setProf} = useState(null)
+    const {Prof, setProf} = useState({})
     const {state,dispatch} = useContext(UserContext)
     const[Profile,setProfile] = useState()
     const[userProfile,setUserProfile] = useState("")
-    const[userEmail,setUserEmail] = useState('')
+    const[userEmail,setUserEmail] = useState("")
     const{userid} = useParams()
     const[posts,setposts] = useState([])
 
@@ -20,7 +20,7 @@ export const UserProfile= () => {
                 }
             }).then(res=>res.json())
             .then(result=>{
-                console.log(result)
+                //console.log(result)
                 setUserProfile(result.user.name)
                 setUserEmail(result.user.email)
                 //console.log(userProfile)
@@ -59,6 +59,37 @@ export const UserProfile= () => {
             })
         }
 
+        const unfollowUser = () => {
+            fetch('/unfollow',{
+                method:"put",
+                headers:
+                {
+                    "Content-Type":"application/json",
+                    "Authorization":"Bearer " + localStorage.getItem('jwt')
+                },
+                body:JSON.stringify({
+                    followId:userid
+                })
+            }).then(res=>res.json())
+            .then(data=>{
+                dispatch({type:"UPDATE",payload:{following:data.following,followers:data.followers}})
+                localStorage.setItem("user",JSON.stringify(data))
+                setProf((prevState)=>{
+                    const newFollower = prevState.user.followers.filter(item=>item!=data._id)
+
+                   return { user:{
+                        ...prevState,
+                        users:{
+                            ...prevState.user,
+                            followers:newFollower
+                        } 
+                    }
+                }
+                })
+
+            })
+        }
+
     return (
         <>
         {
@@ -77,7 +108,13 @@ export const UserProfile= () => {
                 </div>
                 <div>
                     <h5>{userProfile}</h5>
-                    <button onClick= {()=>followUser()} className="btn waves-effect waves-light" type="submit" name="action">Seguir
+
+                    <button onClick= {()=>followUser()} className="btn waves-effect waves-light blue" type="submit" name="action">Seguir
+    <i className="material-icons right"
+    >plus</i>
+        </button>
+
+        <button onClick= {()=>unfollowUser()} className="btn waves-effect waves-light" type="submit" name="action">Dejar de seguir
     <i className="material-icons right"
     >plus</i>
         </button>
@@ -88,7 +125,7 @@ export const UserProfile= () => {
                         width: "108%"
                     }}>
                         <h6>{Profile} publicaciones</h6>
-                        <h6>{Prof.user === undefined?"...":Prof.user.followers.length} seguidores</h6>
+                        <h6>{Prof.user ===undefined?"loading":Prof.user.followers.length===undefined?"loading":Prof.user.followers.length} seguidores</h6>
                         <h6>30 siguiendo</h6>
 
                     </div>
@@ -97,11 +134,11 @@ export const UserProfile= () => {
         
         <div className ="postslist">
             {
-                posts.map(item=>{
-                    return(
-                        <img style={{width:"400px", height: "400px"}} key={item._id} className ="item" src= {item.photo}/>
-                    )
-                })
+                // posts.map(item=>{
+                //     return(
+                //         <img style={{width:"400px", height: "400px"}} key={item._id} className ="item" src= {item.photo}/>
+                //     )
+                // })
             }
         </div>
         </div>
