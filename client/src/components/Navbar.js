@@ -11,6 +11,7 @@ const Navbar= ()=>{
         <>
           <li><Link to="/create">Publicar</Link></li>
           <li><Link to="/profile">Mi Perfil</Link></li>
+          <li><Link to="/myfollowingposts">Siguiendo</Link></li>
           <li>
           <button className="btn waves-effect waves-light #" type="submit" name="action" 
           onClick={()=>{

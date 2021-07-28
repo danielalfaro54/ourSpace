@@ -1,16 +1,17 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../App'
 import {useParams} from 'react-router-dom'
-//import { initialState } from '../../reducers/userReducer'
+import { initialState } from '../../reducers/userReducer'
 
 export const UserProfile= () => {
-    const {Prof, setProf} = useState({})
+    const [Prof, setProf] = useState({})
     const {state,dispatch} = useContext(UserContext)
     const[Profile,setProfile] = useState()
     const[userProfile,setUserProfile] = useState("")
     const[userEmail,setUserEmail] = useState("")
     const{userid} = useParams()
     const[posts,setposts] = useState([])
+    const [showfollow,setShowFollow] = useState(state?!state.following.includes(userid):true)
 
     console.log(userid)
     useEffect(()=>{
@@ -55,7 +56,7 @@ export const UserProfile= () => {
                     }
                 }
                 })
-
+                setShowFollow(false)
             })
         }
 
@@ -86,7 +87,8 @@ export const UserProfile= () => {
                     }
                 }
                 })
-
+                setShowFollow(true)
+                window.location.reload();
             })
         }
 
@@ -107,17 +109,17 @@ export const UserProfile= () => {
             ></img>
                 </div>
                 <div>
-                    <h5>{userProfile}</h5>
-
-                    <button onClick= {()=>followUser()} className="btn waves-effect waves-light blue" type="submit" name="action">Seguir
-    <i className="material-icons right"
-    >plus</i>
-        </button>
-
-        <button onClick= {()=>unfollowUser()} className="btn waves-effect waves-light" type="submit" name="action">Dejar de seguir
-    <i className="material-icons right"
-    >plus</i>
-        </button>
+        <h5>{userProfile}</h5>
+        {!JSON.parse(localStorage.getItem("user")).following.includes(userid) && showfollow?
+              <button onClick= {()=>followUser()} className="btn waves-effect waves-light blue" type="submit" name="action">Seguir
+              <i className="material-icons right"
+              >plus</i>
+              </button>
+                :
+              <button onClick= {()=>unfollowUser()} className="btn waves-effect waves-light" type="submit" name="action">Dejar de seguir
+              <i className="material-icons right"
+              >plus</i>
+              </button>}
                     <h5>{userEmail}</h5>
                     <div style={{
                         display: "flex",
@@ -125,8 +127,8 @@ export const UserProfile= () => {
                         width: "108%"
                     }}>
                         <h6>{Profile} publicaciones</h6>
-                        <h6>{Prof.user ===undefined?"loading":Prof.user.followers.length===undefined?"loading":Prof.user.followers.length} seguidores</h6>
-                        <h6>30 siguiendo</h6>
+                        <h6>{Prof.user ===undefined?"loading":Prof.user.followers===undefined?"loading":Prof.user.followers.length} seguidores</h6>
+                        <h6>{Prof.user ===undefined?"loading":Prof.user.following===undefined?"loading":Prof.user.following.length} siguiendo</h6>
 
                     </div>
                 </div>
