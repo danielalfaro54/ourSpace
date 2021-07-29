@@ -5,6 +5,7 @@ import { initialState } from '../../reducers/userReducer'
 
 export const UserProfile= () => {
     const [Prof, setProf] = useState({})
+    const [userfollower,setFollower] = useState([])
     const {state,dispatch} = useContext(UserContext)
     const[Profile,setProfile] = useState()
     const[userProfile,setUserProfile] = useState("")
@@ -12,6 +13,7 @@ export const UserProfile= () => {
     const{userid} = useParams()
     const[posts,setposts] = useState([])
     const [showfollow,setShowFollow] = useState(state?!state.following.includes(userid):true)
+    const [userPic,setUserpic] = useState("")
 
     console.log(userid)
     useEffect(()=>{
@@ -28,6 +30,8 @@ export const UserProfile= () => {
                 setProfile(result.posts.length)
                 setposts(result.posts)
                 setProf(result)
+                setFollower(result.user.follower)
+                setUserpic(result.user.pic)
 
             })
         },[] )
@@ -105,7 +109,7 @@ export const UserProfile= () => {
             }}>
                 <div>
             <img style={{width:"160px", height: "160px", borderRadius:"80px"}}
-            src="https://images.unsplash.com/photo-1600364769238-1e76e9ff91cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=932&q=80"
+            src={userPic}
             ></img>
                 </div>
                 <div>

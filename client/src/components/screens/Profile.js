@@ -24,7 +24,7 @@ export const Profile= () => {
             }}>
                 <div>
             <img style={{width:"160px", height: "160px", borderRadius:"80px"}}
-            src="https://images.unsplash.com/photo-1600364769238-1e76e9ff91cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=932&q=80"
+            src={state?state.pic:"loading"}
             ></img>
                 </div>
                 <div>

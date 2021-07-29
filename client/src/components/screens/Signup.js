@@ -1,14 +1,39 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import M from 'materialize-css'
 
 export const Signup= () => {
-    const history = useHistory("")
+    const history = useHistory()
     const [name, setname] = useState("")
     const [email, setemail] = useState("")
-    const [password, setpassword] = useState()
-    const PostData = ()=>{
-        //verifiyng email format
+    const [password, setpassword] = useState("")
+    const [url, seturl] = useState(undefined)
+    const [image, setImage] = useState("")
+    
+    useEffect(() => {
+        if(url) {
+            uploadFields()
+        }
+    },[url])
+
+    const uploadpic =()=> {
+        const data = new FormData()
+        data.append("file",image)
+        data.append("upload_preset","SocialNetwork9")
+        data.append("cloud_name","danielalfa98")
+        
+        fetch("https://api.cloudinary.com/v1_1/danielalfa98/image/upload",{
+            method:"post",
+            body:data
+        }).then(res=>res.json())
+        .then(data=>{
+             seturl(data.url)
+        }).catch(err=>{
+            console.log(err);
+        })
+    } 
+
+    const uploadFields = () => {
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
             M.toast({html:"Correo electrónico inválido"})
             return
@@ -22,7 +47,8 @@ export const Signup= () => {
             {
                 name:name,
                 email:email,
-                password:password
+                password:password,
+                pic:url
             }
         )
     }).then(res=>res.json()).then(data=>{
@@ -35,6 +61,15 @@ export const Signup= () => {
     }).catch(err=>{
         console.log(err)
     })
+    }
+
+    const PostData = ()=>{
+        if(image){
+            uploadpic()
+        } else{
+            uploadFields()
+        }
+       
     }
     return (
         <div className='mycard'>
@@ -64,6 +99,20 @@ export const Signup= () => {
                 setpassword(e.target.value)
            }}
            />
+    <div class="file-field input-field">
+        <div className="btn">
+        <span>subir imagen</span>
+            <input type="file"
+                onChange = {(e)=>{
+                    setImage(e.target.files[0])
+                }}
+            />
+        </div>
+        <div className="file-path-wrapper">
+                <input className="file-path validate" type="text"/>
+            </div>
+            </div>
+
             <button 
             onClick={()=>{
                 PostData()
