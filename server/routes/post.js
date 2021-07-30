@@ -7,7 +7,7 @@ const Post = mongoose.model("Post")
 router.get("/allpost",requireLogin,(req,res)=>{
     Post.find()
     .populate("postedby","_id name")
-    //.populate("comments.postedBy","_id name")
+    .populate("comments.postedBy","_id name")
     .then(posts=>{
         res.json(posts)
     }).catch(err=>{
@@ -83,27 +83,27 @@ router.put('/like',requireLogin,(req,res)=>{
     })
 })
 
-// router.put('/comment',requireLogin,(req,res)=>{
-//     const comment = {
-//         text:req.body.text,
-//         name:req.body.name,
-//         postedBy:req.user
-//     }
-//     Post.findByIdAndUpdate(req.body.postId,{
-//         $push:{comments:comment}
-//     },{
-//         new:true
-//     })
-//     .populate("postedBy","_id name")
-//     .populate("comments.postedBy","_id name")
-//     .exec((err,result)=>{
-//         if(err){
-//             return res.status(422).json({error:err})
-//         }else{
-//             res.json(result)
-//         }
-//     })
-// })
+router.put('/comment',requireLogin,(req,res)=>{
+    const comment = {
+        text:req.body.text,
+        name:req.body.name,
+        postedBy:req.user
+    }
+    Post.findByIdAndUpdate(req.body.postId,{
+        $push:{comments:comment}
+    },{
+        new:true
+    })
+    .populate("postedBy","_id name")
+    .populate("comments.postedBy","_id name")
+    .exec((err,result)=>{
+        if(err){
+            return res.status(422).json({error:err})
+        }else{
+            res.json(result)
+        }
+    })
+})
 
 router.delete("/deletepost/:postId",requireLogin,(req,res)=>{
     Post.findOne({_id:req.params.postId})
