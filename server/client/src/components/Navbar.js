@@ -33,9 +33,9 @@ const Navbar= ()=>{
   }
 
     return (<nav>
-    <div className="nav-wrapper">
+    <div className="nav-wrapper #212121 grey darken-4">
         
-      <Link to={state?"/":"/signin"} className="brand-logo left b">The Social Network</Link>
+      <Link to={state?"/":"/signin"} className="brand-logo left b">OurSpace</Link>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
         
         {renderList()}
