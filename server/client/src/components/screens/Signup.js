@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import M from 'materialize-css'
+import { MDBInput, MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody} from 'mdbreact';
 
 export const Signup= () => {
     const history = useHistory()
@@ -72,28 +73,29 @@ export const Signup= () => {
        
     }
     return (
-        <div className='mycard'>
-        <div className="card auth-card">
-           <h3>The Social Network</h3>
-           <input
+        <MDBContainer>
+        <MDBRow>
+          <MDBCol md="5">
+            <MDBCard>
+              <MDBCardBody>
+                <form>
+                <p className="h4 text-center py-4">CREAR CUENTA</p>
+           <MDBInput label="Nombre" outline
            type='text'
-           placeholder='Nombre'
            value= {name}
            onChange = {(e)=>{
                 setname(e.target.value)
            }}
            />
-           <input
+           <MDBInput label="Correo electrónico" outline
            type='text'
-           placeholder='Correo electrónico'
            value= {email}
            onChange = {(e)=>{
                 setemail(e.target.value)
            }}
            />
-           <input
-           type='text'
-           placeholder='Contraseña'
+           <MDBInput label="Contraseña" outline
+           type='password'
            value= {password}
            onChange = {(e)=>{
                 setpassword(e.target.value)
@@ -117,12 +119,16 @@ export const Signup= () => {
             onClick={()=>{
                 PostData()
             }}
-            className="btn waves-effect waves-light" type="submit" name="action">Sign up
-    <i className="material-icons right">send</i>
+            className="btn waves-effect waves-light" type="submit" name="action">Registrarse
+    <i className="material-icons right"></i>
         </button>
-        <h6><Link to='/signin'>Ya tienes una cuenta?
+        <h6><Link to='/signin'>Ya tienes una cuenta?. Inicia sesión
         </Link></h6>
-      </div>
-        </div>
+        </form>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
     )
 }

@@ -31,7 +31,6 @@ const Navbar= ()=>{
       ]
     }
   }
-
     return (<nav>
     <div className="nav-wrapper #212121 grey darken-4">
         

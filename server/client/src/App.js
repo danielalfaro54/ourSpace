@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import {BrowserRouter,Route, Switch, useHistory} from 'react-router-dom'
 import {Home} from './components/screens/Home'
 import {Signin} from './components/screens/Signin'
+import {Si} from './components/screens/Signin'
 import {Profile} from './components/screens/Profile'
 import {Signup} from './components/screens/Signup'
 import {Createpost} from './components/screens/Createpost'

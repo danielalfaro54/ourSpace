@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import {UserContext} from '../../App'
 import 'semantic-ui-css/semantic.min.css'
-import { Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+
 
 export const SubscribedUserPosts = () => {
     const [data,setData] = useState([])
@@ -128,10 +128,10 @@ export const SubscribedUserPosts = () => {
                     <h5><Link to={"/profile/" + item.postedby._id}>
                         {item.postedby.name}
                     </Link>
-                    <Icon name="delete" style={{float:"right"}} size='large'//small
+                    <i class="x" style={{float:"right"}}
                         onClick={()=>{
                             deletePost(item._id)
-                    }}></Icon>
+                    }}></i>
                     </h5>
 
                     <div className="card-image">
@@ -140,15 +140,15 @@ export const SubscribedUserPosts = () => {
                         <div className="card-content">
                             {item.likes.includes(state._id)
                             ? 
-                                <Icon name="thumbs up" size='big'
-                                onClick={()=>{
-                                    unlikePost(item._id)
-                                }}></Icon>
-                            :
-                                <Icon name="thumbs up outline" size='big'
-                                onClick={()=>{
-                                    likePost(item._id)
-                                }}></Icon>
+                            <i class="hand-thumbs-up" style={{fontsize: "2rem"}} 
+                            onClick={()=>{
+                                unlikePost(item._id)
+                            }}></i>
+                        :
+                            <i class="hand-thumbs-up" style={{fontsize: "2rem"}} 
+                            onClick={()=>{
+                                likePost(item._id)
+                            }}></i>
                             }
                                 <h6>{item.likes.length} likes</h6>
                                 <h6>{item.title}</h6>

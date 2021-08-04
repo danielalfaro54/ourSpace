@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import {UserContext} from '../../App'
 import 'semantic-ui-css/semantic.min.css'
-//import { Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import './Home.css';
 
 export const Home = () => {
     const [data,setData] = useState([])
@@ -125,32 +125,32 @@ export const Home = () => {
             {data.map(item=>{
             return(
                 <div className= "card home-card" key={item._id}>
-                    <h5><Link to={"/profile/" + item.postedby._id}>
-                        {item.postedby.name}
+                    <h5><Link to={"/profile/" + item.postedby._id} style={{fontSize: '17px', marginLeft: '4%', color:'black'}}>
+                    {item.postedby.name}
                     </Link>
-                    {/* <Icon name="delete" style={{float:"right"}} size='large'//small
+                    <i class="bi bi-x" style={{float: 'right', fontSize: '2rem'}}
                         onClick={()=>{
                             deletePost(item._id)
-                    }}></Icon> */}
+                    }}></i>
                     </h5>
-
+                    
                     <div className="card-image">
-                    <img src={item.photo}/>
+                    <img src={item.photo} style={{width: '100%'}} />
                     </div>
                         <div className="card-content">
                             {item.likes.includes(state._id)
                             ? 
-                            <i class="hand-thumbs-up" style="font-size: 2rem; color: cornflowerblue;"
+                            <i class="bi bi-hand-thumbs-up-fill" style={{fontSize: "2rem", color: '#ab47bc'}} 
                                 onClick={()=>{
                                     unlikePost(item._id)
                                 }}></i>
                             :
-                            <i class="hand-thumbs-up" style="font-size: 2rem; color: cornflowerblue;"
+                            <i class="bi bi-hand-thumbs-up" style={{fontSize: "2rem"}} 
                                 onClick={()=>{
                                     likePost(item._id)
                                 }}></i>
                             }
-                                <h6>{item.likes.length} likes</h6>
+                                <h6>{item.likes.length} Me gusta</h6>
                                 <h6>{item.title}</h6>
                                 <p>{item.body}</p>
                                 {

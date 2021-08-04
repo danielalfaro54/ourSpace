@@ -46,7 +46,7 @@ export const Profile= () => {
             {
                 mypics.map(item=>{
                     return(
-                        <img style={{width:"400px", height: "400px"}} key={item._id} className ="item" src= {item.photo}/>
+                        <img style={{height: "400px"}} key={item._id} className ="item" src= {item.photo}/>
                     )
                 })
             }

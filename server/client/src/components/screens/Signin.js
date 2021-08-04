@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { UserContext } from '../../App'
-//import M from 'materialize-css'
+import M from 'materialize-css'
+import { MDBInput, MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody} from 'mdbreact';
 
-export const Signin= () => {
+export const Signin = () => {
     const {state,dispatch} = useContext(UserContext)
     const history = useHistory("")
     const [email, setemail] = useState("")
@@ -41,33 +42,42 @@ export const Signin= () => {
     })
     }
     return (
-        <div className='mycard'>
-        <div className="card auth-card">
-           <h3>The Social Network</h3>
-           <input
+        <div className= 'singinc' style={{ marginTop: '5%'}} >
+        <div className="card-image" style={{textAlign: 'center'}}>
+         <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1628041382/e8e1153d4d014fdb9000a0a4e479b497_qtgxig.png' style={{width: '50px'}} />
+        </div>
+        <MDBContainer style={{width: '325px', height: '800%'}}>
+        <MDBRow >
+          <MDBCol >
+            <MDBCard style={{backgroundColor: '#fafafa'}}>
+              <MDBCardBody className= 'singinc'>
+                <form >
+           <p className="h4 text-center py-4">Iniciar Sesión</p>
+           <MDBInput label="Correo electrónico" outline
            type='text'
-           placeholder='Correo electrónico'
            value= {email}
            onChange = {(e)=>{
                 setemail(e.target.value)
            }}
            />
-           <input
+           <MDBInput label="Contraseña" outline
            type='password'
-           placeholder='Contraseña'
            value= {password}
            onChange = {(e)=>{
                 setpassword(e.target.value)
            }}
            />
-            <button className="btn waves-effect waves-light" type="submit" name="action">Login
-    <i className="material-icons right"
-    onClick= {()=>PostData()}
-    >send</i>
+        <button className="btn waves-effect waves-light" type="submit" name="action" 
+            onClick= {()=>PostData()}>Ingresar
         </button>
-        <h6><Link to='/signup'>No tengo una cuenta
+        <h6>¿Primera vez aquí?<Link to='/signup'> Regístrate.
         </Link></h6>
-      </div>
-        </div>
+      </form>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
+    </div>
     )
 }
