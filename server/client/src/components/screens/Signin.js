@@ -1,8 +1,9 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, Fragment } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { UserContext } from '../../App'
 import M from 'materialize-css'
-import { MDBInput, MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody} from 'mdbreact';
+import { Button } from 'semantic-ui-react'
+import { MDBInput, MDBContainer, MDBRow, MDBBtn, MDBCol, MDBCard, MDBCardBody} from 'mdbreact';
 
 export const Signin = () => {
     const {state,dispatch} = useContext(UserContext)
@@ -67,10 +68,13 @@ export const Signin = () => {
                 setpassword(e.target.value)
            }}
            />
-           
-        <button className="btn waves-effect waves-light waves-effect purple" type="submit" name="action" 
+        <Button color='purple' type="submit" name="action" 
             onClick= {()=>PostData()}>Ingresar
-        </button>
+        </Button>
+           <br>
+           </br>
+           <br>
+           </br>
         <h6>¿Primera vez aquí?<Link to='/signup'> Regístrate.
         </Link></h6>
       </form>
