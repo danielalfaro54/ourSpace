@@ -25,16 +25,19 @@ const Navbar= ()=>{
       ]
     }else {
       return [  <>
-          <li><Link to="/signin">Iniciar sesión</Link></li>
-          <li><Link to="/signup">Registrarse</Link></li>
+          <li><Link to="/signin" className='links'>Iniciar sesión</Link></li>
+          <li><Link to="/signup" className='links'>Registrarse</Link></li>
         </>
       ]
     }
   }
     return (<nav>
     <div className="nav-wrapper #212121 grey darken-4">
-        
-      <Link to={state?"/":"/signin"} className="brand-logo left b">OurSpace</Link>
+    
+      <Link to={state?"/":"/signin"} className="brand-logo left b" style={{fontSize:'23px', color:'white'}}>
+      <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1628646860/e8e1153d4d014fdb9000a0a4e479b497_qtgxig_c0ht6b.png' style={{ height:'28px', paddingRight:'10px'}} />
+        OurSpace
+      </Link>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
         
         {renderList()}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import M from 'materialize-css'
+import { Button } from 'semantic-ui-react'
 import { MDBInput, MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody} from 'mdbreact';
 
 export const Signup= () => {
@@ -73,56 +74,66 @@ export const Signup= () => {
        
     }
     return (
-        <MDBContainer>
+        <div className= 'singinc' style={{ marginTop: '1%'}}>
+        <div className= 'singinc' style={{ marginTop: '2%', width: '100wh', height: '100vh'}} >
+        <MDBContainer style={{width: '355px', height: '100vh'}}>
         <MDBRow>
-          <MDBCol md="5">
-            <MDBCard>
-              <MDBCardBody>
+          <MDBCol>
+            <MDBCard style={{backgroundColor: '#fafafa'}}>
+              <MDBCardBody className= 'singinc'>
                 <form>
-                <p className="h4 text-center py-4">CREAR CUENTA</p>
-           <MDBInput label="Nombre" outline
+                <p className="h4 text-center py-4" style={{fontSize:'27px'}}>Registrarse</p>
+           <MDBInput label="Nombre" outline style={{backgroundColor: 'white'}}
            type='text'
            value= {name}
            onChange = {(e)=>{
                 setname(e.target.value)
            }}
            />
-           <MDBInput label="Correo electrónico" outline
+           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
            type='text'
            value= {email}
            onChange = {(e)=>{
                 setemail(e.target.value)
            }}
            />
-           <MDBInput label="Contraseña" outline
+           <MDBInput label="Contraseña" outline style={{backgroundColor: 'white'}}
            type='password'
            value= {password}
            onChange = {(e)=>{
                 setpassword(e.target.value)
            }}
            />
-    <div class="file-field input-field">
-        <div className="btn">
-        <span>subir imagen</span>
+    <div class="file-field input-field" style={{display: 'inline-flex'}}>
+    <Button basic color='violet' style={{height:'47px', width:'100px'}}>
+    <i class="bi bi-image" style={{marginRight:'5px', marginLeft:'-9px'}}></i>
+       Foto de perfil
             <input type="file"
                 onChange = {(e)=>{
                     setImage(e.target.files[0])
                 }}
             />
-        </div>
-        <div className="file-path-wrapper">
-                <input className="file-path validate" type="text"/>
+             </Button>
+            
+        <div className="file-path-wrapper" >
+                <input className="file-path validate" type="text" placeholder='*Opcional'/>
             </div>
             </div>
-
-            <button 
+                <div>
+            <br>
+           </br>
+            <Button color='violet' type="submit" name="action"
+            style = {{width:'95%'}}
             onClick={()=>{
                 PostData()
             }}
-            className="btn waves-effect waves-light" type="submit" name="action">Registrarse
-    <i className="material-icons right"></i>
-        </button>
-        <h6><Link to='/signin'>Ya tienes una cuenta?. Inicia sesión
+                >Crear cuenta
+            </Button>
+            </div>
+           <br>
+           </br>
+          
+         <h6>¿Ya tienes una cuenta?<Link to='/signin'> Inicia sesión.
         </Link></h6>
         </form>
             </MDBCardBody>
@@ -130,5 +141,7 @@ export const Signup= () => {
         </MDBCol>
       </MDBRow>
     </MDBContainer>
+    </div>
+    </div>
     )
 }

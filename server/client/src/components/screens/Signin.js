@@ -44,16 +44,13 @@ export const Signin = () => {
     }
     return (
         <div className= 'singinc' style={{ marginTop: '5%'}} >
-        <div className="card-image" style={{textAlign: 'center'}}>
-         <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1628041382/e8e1153d4d014fdb9000a0a4e479b497_qtgxig.png' style={{width: '50px'}} />
-        </div>
         <MDBContainer style={{width: '325px', height: '80%'}}>
         <MDBRow >
           <MDBCol >
             <MDBCard style={{backgroundColor: '#fafafa'}}>
               <MDBCardBody className= 'singinc'>
                 <form >
-           <p className="h4 text-center py-4">Iniciar Sesión</p>
+           <p className="h4 text-center py-4" style={{fontSize:'26px'}}>Iniciar Sesión</p>
            <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
            type='text'
            value= {email}
@@ -68,7 +65,7 @@ export const Signin = () => {
                 setpassword(e.target.value)
            }}
            />
-        <Button color='purple' type="submit" name="action" 
+        <Button color='violet' type="submit" name="action" style = {{width:'99%'}}
             onClick= {()=>PostData()}>Ingresar
         </Button>
            <br>
