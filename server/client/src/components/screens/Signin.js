@@ -1,11 +1,11 @@
-import React, { useState, useContext, Fragment } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { UserContext } from '../../App'
-import M from 'materialize-css'
+import M from 'materialize-css';
 import { Button } from 'semantic-ui-react'
-import { MDBInput, MDBContainer, MDBRow, MDBBtn, MDBCol, MDBCard, MDBCardBody} from 'mdbreact';
+import { MDBInput} from 'mdbreact';
 
-export const Signin = () => {
+export const Signin= () => {
     const {state,dispatch} = useContext(UserContext)
     const history = useHistory("")
     const [email, setemail] = useState("")
@@ -13,7 +13,7 @@ export const Signin = () => {
     const PostData = ()=>{
         //verifiyng email format
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            M.toast({html:"Correo electrónico inválido"})
+            M.toast({html:'Correo electrónico inválido'})
             return
         }
         fetch("/signin",{
@@ -43,14 +43,10 @@ export const Signin = () => {
     })
     }
     return (
-        <div className= 'singinc' style={{ marginTop: '5%'}} >
-        <MDBContainer style={{width: '325px', height: '80%'}}>
-        <MDBRow >
-          <MDBCol >
-            <MDBCard style={{backgroundColor: '#fafafa'}}>
-              <MDBCardBody className= 'singinc'>
-                <form >
-           <p className="h4 text-center py-4" style={{fontSize:'26px'}}>Iniciar Sesión</p>
+        <div className='mycard'>
+        <div className="card auth-card" style={{backgroundColor: '#fbfbfb', width:'23rem', marginTop:'5%'}}>
+           <h3>Iniciar sesión</h3>
+           <div>
            <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
            type='text'
            value= {email}
@@ -65,23 +61,18 @@ export const Signin = () => {
                 setpassword(e.target.value)
            }}
            />
-        <Button color='violet' type="submit" name="action" style = {{width:'99%'}}
+           </div>
+        <Button color='violet' type="submit" name="action" style = {{width:'100%'}}
          onClick= {()=>
              PostData()}
                 >Ingresar
         </Button>
-           <br>
-           </br>
-           <br>
-           </br>
+           
+        <hr style={{width:'100%', marginTop:'22px', marginBottom:'22px'}}/>
+           
         <h6>¿Primera vez aquí?<Link to='/signup'> Regístrate.
         </Link></h6>
-      </form>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
-    </div>
+      </div>
+        </div>
     )
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import M from 'materialize-css'
 import { Button } from 'semantic-ui-react'
-import { MDBInput, MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody} from 'mdbreact';
+import { MDBInput} from 'mdbreact';
 
 export const Signup= () => {
     const history = useHistory()
@@ -74,15 +74,10 @@ export const Signup= () => {
        
     }
     return (
-        <div className= 'singinc' style={{ marginTop: '1%'}}>
-        <div className= 'singinc' style={{ marginTop: '2%', width: '100wh', height: '100vh'}} >
-        <MDBContainer style={{width: '355px', height: '100vh'}}>
-        <MDBRow>
-          <MDBCol>
-            <MDBCard style={{backgroundColor: '#fafafa'}}>
-              <MDBCardBody className= 'singinc'>
-                <form>
-                <p className="h4 text-center py-4" style={{fontSize:'27px'}}>Registrarse</p>
+        <div className='mycard'>
+        <div className="card auth-card" style={{backgroundColor: '#fbfbfb', width:'23rem', marginTop:'2%'}}>
+           <h3>Registrarse</h3>
+           <div>
            <MDBInput label="Nombre" outline style={{backgroundColor: 'white'}}
            type='text'
            value= {name}
@@ -104,7 +99,8 @@ export const Signup= () => {
                 setpassword(e.target.value)
            }}
            />
-    <div class="file-field input-field" style={{display: 'inline-flex'}}>
+           </div>
+    <div class="file-field input-field" style={{display: 'inline-flex', marginTop:'1px', marginBottom:'1px'}}>
     <Button basic color='violet' style={{height:'47px', width:'100px'}}>
     <i class="bi bi-image" style={{marginRight:'5px', marginLeft:'-9px'}}></i>
        Foto de perfil
@@ -115,33 +111,24 @@ export const Signup= () => {
             />
              </Button>
             
-        <div className="file-path-wrapper" >
+            <div className="file-path-wrapper" >
                 <input className="file-path validate" type="text" placeholder='*Opcional'/>
             </div>
             </div>
-                <div>
-            <br>
-           </br>
+            <div>
+            <br/>
             <Button color='violet' type="submit" name="action"
-            style = {{width:'95%'}}
+            style = {{width:'100%'}}
             onClick={()=>{
                 PostData()
             }}
                 >Crear cuenta
             </Button>
             </div>
-           <br>
-           </br>
-          
+         <hr style={{width:'100%', marginTop:'22px', marginBottom:'22px'}}/>
          <h6>¿Ya tienes una cuenta?<Link to='/signin'> Inicia sesión.
         </Link></h6>
-        </form>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
-    </div>
-    </div>
+      </div>
+        </div>
     )
 }
