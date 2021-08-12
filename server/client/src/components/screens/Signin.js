@@ -65,8 +65,10 @@ export const Signin = () => {
                 setpassword(e.target.value)
            }}
            />
-        <Button onClick= {()=>PostData()} color='violet' type="submit" name="action" style = {{width:'99%'}}
-            >Ingresar
+        <Button color='violet' type="submit" name="action" style = {{width:'99%'}}
+         onClick= {()=>
+             PostData()}
+                >Ingresar
         </Button>
            <br>
            </br>

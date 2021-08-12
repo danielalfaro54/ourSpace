@@ -80,7 +80,7 @@ export const UserProfile= () => {
                 dispatch({type:"UPDATE",payload:{following:data.following,followers:data.followers}})
                 localStorage.setItem("user",JSON.stringify(data))
                 setProf((prevState)=>{
-                    const newFollower = prevState.user.followers.filter(item=>item!=data._id)
+                    const newFollower = prevState.user.followers.filter(item=>item!==data._id)
 
                    return { user:{
                         ...prevState,
@@ -110,7 +110,7 @@ export const UserProfile= () => {
                 <div>
             <img style={{width:"160px", height: "160px", borderRadius:"80px"}}
             src={userPic}
-            ></img>
+            />
                 </div>
                 <div>
         <h5>{userProfile}</h5>
