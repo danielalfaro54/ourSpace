@@ -23,9 +23,9 @@ export const Profile= () => {
                 width:'100%'
             }}>
                 <div>
-            <img style={{width:'150px',height:'auto', borderRadius:"100%", minWidth:'120px', marginLeft: "1.3rem",marginTop:'0.5rem'}}
-            src={state?state.pic:"loading"}
-            ></img>
+                <img style={{width:'140px',height:'140px', borderRadius:"100%", marginLeft: "1.3rem",marginTop:'0.3rem'}}
+                    src={state?state.pic:"loading"}
+                ></img>
                 </div>
                 <div style={{marginTop:'17px',marginLeft:'7%'}}>
                     <h5 style={{fontSize:'21px'}}>{state?state.name:"loading"}</h5>
@@ -49,14 +49,12 @@ export const Profile= () => {
                 </div>
             </div>
             <hr style={{width:'70%', marginTop:'20px', marginBottom:'20px'}}/>
-        <div className ="postslist" style = {{width:'50%', display: "inline-flex", marginLeft:'9%',marginRight:'9%',
-                justifyContent: "flex-start",}}>
+        <div className ="postslist" style = {{width:'84%', display: "flex", marginLeft:'9%',marginRight:'9%',
+                justifyContent: "space-around", flexWrap:'wrap'}}>
             {
                 mypics.map(item=>{
                     return(
-                        <div style= {{height:'100%',width:'100wh'}}>
-                        <img style={{height: "20rem" }} key={item._id} className ="item" src= {item.photo}/>
-                        </div>
+                        <img style={{height:'20rem', marginBottom:'1rem'}} key={item._id} className ="item" src= {item.photo}/>
                     )
                 })
             }
