@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { UserContext } from '../../App'
 
 export const Profile= () => {
     const {state,dispatch} = useContext(UserContext)
     const[mypics,setPics] = useState([])
+
     useEffect(()=>{
             fetch("/mypost",{
                 headers:{
@@ -50,11 +52,14 @@ export const Profile= () => {
             </div>
             <hr style={{width:'70%', marginTop:'20px', marginBottom:'20px'}}/>
         <div className ="postslist" style = {{width:'71%', display: "flex", marginInline:'14.5%',
-                justifyContent: "space around", flexWrap:'wrap'}}>
+                justifyContent: "space-around", flexWrap:'wrap'}}>
             {
                 mypics.map(item=>{
                     return(
-                        <img style={{width:'20rem',height:'20rem',backgroundPosition: 'center center',objectFit: 'cover',marginBottom:'1rem',marginInline:'1%'}} key={item._id} className ="item" src= {item.photo}/>
+                        <Link to={{ pathname: item.photo }} target="_blank">
+                        <img style={{width:'20rem',height:'20rem',backgroundPosition: 'center center',objectFit: 'cover',marginBottom:'1rem',marginInline:'1%'}} key={item._id} className ="item" src= {item.photo}
+                        />
+                        </Link>
                     )
                 })
             }
