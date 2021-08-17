@@ -5,6 +5,17 @@
 .singinc {
   text-align: center;
 }
+.profileimg{
+  background-size: cover;
+  border-radius:50%;
+  overflow: hidden;
+  background-position: center center;
+  /* background-position: top center; */
+  object-fit: cover;
+  width: 9.5rem;
+  height: 9.5rem;
+
+}
 .links {
   color: #bdbdbd;
 }
