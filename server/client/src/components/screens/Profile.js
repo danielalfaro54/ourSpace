@@ -27,7 +27,7 @@ export const Profile= () => {
                     src={state?state.pic:"loading"}
                 ></img>
                 </div>
-                <div style={{marginTop:'17px',marginLeft:'7%'}}>
+                <div style={{marginTop:'17px',marginLeft:'6%'}}>
                     <h5 style={{fontSize:'21px'}}>{state?state.name:"loading"}</h5>
                     <div style={{
                         display: "flex",
@@ -49,16 +49,16 @@ export const Profile= () => {
                 </div>
             </div>
             <hr style={{width:'70%', marginTop:'20px', marginBottom:'20px'}}/>
-        <div className ="postslist" style = {{width:'84%', display: "flex", marginLeft:'9%',marginRight:'9%',
-                justifyContent: "space-around", flexWrap:'wrap'}}>
+        <div className ="postslist" style = {{width:'71%', display: "flex", marginInline:'14.5%',
+                justifyContent: "space around", flexWrap:'wrap'}}>
             {
                 mypics.map(item=>{
                     return(
-                        <img style={{height:'20rem', marginBottom:'1rem'}} key={item._id} className ="item" src= {item.photo}/>
+                        <img style={{width:'20rem',height:'20rem',backgroundPosition: 'center center',objectFit: 'cover',marginBottom:'1rem',marginInline:'1%'}} key={item._id} className ="item" src= {item.photo}/>
                     )
                 })
             }
-        </div>
+            </div>
         </div>
     )
 }
