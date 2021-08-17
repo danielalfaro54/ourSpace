@@ -29,24 +29,24 @@ export const Profile= () => {
                     src={state?state.pic:"loading"}
                 ></img>
                 </div>
-                <div style={{marginTop:'17px',marginLeft:'6%'}}>
-                    <h5 style={{fontSize:'21px'}}>{state?state.name:"loading"}</h5>
-                    <div style={{
-                        display: "flex",
-                        justifyContent: "flex-start",
-                        width: "100%",
-                        marginTop:'11px'
-                    }}>
-                        <h6 style={{fontSize:'15px'}}>14 publicaciones</h6>
-                    </div>
-                    <br/>
+                <div style={{marginTop:'1.2rem',marginLeft:'6%'}}>   
+                    <h6 style={{fontSize:'20px', fontWeight:'400'}}>{state?state.name:"loading"}</h6>
                     <div style={{
                         display: "flex",
                         justifyContent: "flex-start",
                         width: "100%"
                     }}>
-                        <h6>30 seguidores</h6>
-                        <h6 style={{marginLeft: "1rem", marginRight:'1rem'}}>30 siguiendo</h6>
+                         <h6 style={{fontSize:'14px',color:'grey'}}>{state?state.email:"loading"}</h6>
+                    </div>
+                    <br/>
+                    <div style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        width: "100%",
+                        marginTop:'0.7rem'
+                    }}>
+                        <h6>{state?state.followers.length:"loading"} seguidores</h6>
+                        <h6 style={{marginLeft: "1rem", marginRight:'1rem'}}>{state?state.following.length:"loading"} siguiendo</h6>
                     </div>
                 </div>
             </div>
