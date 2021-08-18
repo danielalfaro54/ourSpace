@@ -119,19 +119,37 @@ export const Home = () => {
       
         
     }
+//    function deleteButton(item) {
+//         if(item._id!== result.id){
+//             return(
+//                 <i class="bi bi-x" style={{float: 'right', fontSize: '1.5rem'}}
+//                         onClick={()=>{
+//                             deletePost(item._id)
+//                     }}></i>
+//             )}
+//             else{
+//                 return('');
+//         }
+//     }
 
     return (
         <div className="home">
             {data.map(item=>{
             return(
+
                 <div className= "card home-card" style={{height:'100%'}} key={item._id}>
-                    <h5><Link to={"/profile/" + item.postedby._id} style={{fontSize: '17px', marginLeft: '4%', color:'black'}}>
+                    <h5><Link to={"/profile/" + item.postedby._id} style={{fontSize: '19px', marginLeft: '4%', color:'black'}}>
                     {item.postedby.name}
                     </Link>
-                    <i class="bi bi-x" style={{float: 'right', fontSize: '2rem'}}
+                    {item.postedby._id.includes(state._id)
+                    ?
+                    <i title="Eliminar" class="bi bi-x" style={{float: 'right', fontSize: '1.5rem'}}
                         onClick={()=>{
                             deletePost(item._id)
                     }}></i>
+                    :
+                    <i></i>
+                    }    
                     </h5>
                     
                     <div className="card-image">
