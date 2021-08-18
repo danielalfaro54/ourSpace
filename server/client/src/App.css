@@ -16,10 +16,10 @@
   height: 9.5rem;
 }
 .links {
-  color: #bdbdbd;
+  color: white;
 }
 .links:hover {
-   color: white;
+  color: #bdbdbd;
 }
 .mycard{
   margin-top: 30px;
