@@ -124,7 +124,7 @@ export const Home = () => {
         <div className="home">
             {data.map(item=>{
             return(
-                <div className= "card home-card" key={item._id}>
+                <div className= "card home-card" style={{height:'100%'}} key={item._id}>
                     <h5><Link to={"/profile/" + item.postedby._id} style={{fontSize: '17px', marginLeft: '4%', color:'black'}}>
                     {item.postedby.name}
                     </Link>
@@ -151,8 +151,9 @@ export const Home = () => {
                                 }}></i>
                             }
                                 <h6>{item.likes.length} Me gusta</h6>
-                                <h6>{item.title}</h6>
-                                <p>{item.body}</p>
+                                <h5>{item.title}</h5>
+                                <h6>{item.body}</h6>
+                                <br/>
                                 {
                                     item.comments.map(record=>{
                                         return(
@@ -165,14 +166,12 @@ export const Home = () => {
                                     e.preventDefault()
                                     makeComment(e.target[0].value,item._id)
                                 }}>
-                                    <input type= "text" placeholder ="add a comment"/>
+                                    <input type= "text" placeholder ="Escribe un comentario"/>
                                 </form> 
                     </div>
                 </div> 
             )
-
         })}
-            
         </div>
     )
 }

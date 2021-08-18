@@ -28,7 +28,7 @@ const Navbar= ()=>{
       ]
     }
   }
-    return (<nav>
+    return (<nav className='navbarz'>
     <div className="nav-wrapper #212121 grey darken-4">
     
       <Link to={state?"/":"/signin"} className="brand-logo left b" style={{fontSize:'23px', color:'white'}}>
