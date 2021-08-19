@@ -24,7 +24,7 @@ export const Profile= () => {
                 marginTop:"2%",
                 width:'100%'
             }}>
-                <div  >
+                <div>
                 <img className='profileimg' style={{marginLeft: "1.3rem",marginTop:'0.3rem'}}
                     src={state?state.pic:"loading"}
                 ></img>

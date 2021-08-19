@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../App'
-import {useParams} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 import { initialState } from '../../reducers/userReducer'
+import { Button } from 'semantic-ui-react'
 
 export const UserProfile= () => {
     const [Prof, setProf] = useState({})
@@ -99,60 +100,74 @@ export const UserProfile= () => {
     return (
         <>
         {
-            posts?
+          posts?
             <div>
             <div style={{
                 display: "flex",
-                justifyContent: "space-around",
-                margin:"18px 0px",
-                borderBottom: "1px solid grey" 
+                justifyContent: "center",
+                marginTop:"2%",
+                width:'100%'
             }}>
-                <div>
-            <img style={{width:"160px", height: "160px", borderRadius:"80px"}}
-            src={userPic}
-            />
+            <div>
+            <img className='profileimg' style={{marginLeft: "1.3rem",marginTop:'0.3rem'}}
+            src={userPic}/>
                 </div>
-                <div>
-        <h5>{userProfile}</h5>
-        {!JSON.parse(localStorage.getItem("user")).following.includes(userid) && showfollow?
-              <button onClick= {()=>followUser()} className="btn waves-effect waves-light blue" type="submit" name="action">Seguir
-              <i className="material-icons right"
-              >plus</i>
-              </button>
-                :
-              <button onClick= {()=>unfollowUser()} className="btn waves-effect waves-light" type="submit" name="action">Dejar de seguir
-              <i className="material-icons right"
-              >plus</i>
-              </button>}
-                    <h5>{userEmail}</h5>
+            <div style={{marginTop:'1.2rem',marginLeft:'6%'}}>  
+            <div style={{justifyContent:'inline',display:'flex'}}>
+            <h6 style={{fontSize:'20px', fontWeight:'400',marginRight:'1rem',marginTop:'0.5rem'}}>{userProfile}</h6>
+        {!JSON.parse(localStorage.getItem("user")).following.includes(userid) && showfollow
+              ?
+              <Button color='violet' type="submit" name="action" style={{height:'2.35rem', width:'5.1rem',fontWeight:'bold'}}
+                onClick= {()=>followUser()}>
+                    <i style={{marginLeft:'-0.4rem'}}></i>
+                Seguir
+              </Button>    
+              :
+              <Button basic color='violet' type="submit" name="action" style={{height:'2.3rem', width:'8rem'}}
+                onClick= {()=>unfollowUser()}>
+                    <i class="bi bi-check2" style={{marginLeft:'-0.5rem'}}> </i>
+                Siguiendo
+              </Button> 
+              }
+              </div>
                     <div style={{
                         display: "flex",
-                        justifyContent: "space-around",
-                        width: "108%"
+                        justifyContent: "flex-start",
+                        width: "100%",
+                        marginTop:'0.9rem'
                     }}>
-                        <h6>{Profile} publicaciones</h6>
-                        <h6>{Prof.user ===undefined?"loading":Prof.user.followers===undefined?"loading":Prof.user.followers.length} seguidores</h6>
-                        <h6>{Prof.user ===undefined?"loading":Prof.user.following===undefined?"loading":Prof.user.following.length} siguiendo</h6>
-
+                        <h6 style={{fontSize:'14px'}}>{Profile} publicaciones</h6>
+                    </div>
+                    <div style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        width: "100%",
+                        marginTop:'1.3rem'
+                    }}>
+                        <h6 style={{marginRight:'1rem'}}>
+                            {Prof.user ===undefined?" ":Prof.user.following===undefined?" ":Prof.user.following.length} siguiendo</h6>
+                        <h6>{Prof.user ===undefined?" ":Prof.user.followers===undefined?" ":Prof.user.followers.length} seguidores</h6>
                     </div>
                 </div>
             </div>
-        
-        <div className ="postslist">
+        <hr style={{width:'70%', marginTop:'20px', marginBottom:'20px'}}/>
+        <div className ="postslist" style = {{width:'71%', display: "flex", marginInline:'14.5%',
+                justifyContent: "space-around", flexWrap:'wrap'}}>
             {
-                // posts.map(item=>{
-                //     return(
-                //         <img style={{width:"400px", height: "400px"}} key={item._id} className ="item" src= {item.photo}/>
-                //     )
-                // })
+                posts.map(item=>{
+                    return(
+                        <Link to={{ pathname: item.photo }} target="_blank">
+                        <img style={{width:'20rem',height:'20rem',backgroundPosition: 'center center',objectFit: 'cover',marginBottom:'1rem',marginInline:'1rem'}} key={item._id} className ="item" src= {item.photo}
+                        />
+                        </Link>
+                   )
+                })
             }
         </div>
         </div>
-
             :
-            "..."
+                "..."
         }
-        
         </>
     )
 }
