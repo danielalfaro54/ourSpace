@@ -138,9 +138,20 @@ export const Home = () => {
             return(
 
                 <div className= "card home-card" style={{height:'100%'}} key={item._id}>
-                    <h5><Link to={"/profile/" + item.postedby._id} style={{fontSize: '19px', marginLeft: '4%', color:'black'}}>
+                    <h5>
+                    {item.postedby._id.includes(state._id)
+                    ?
+                        <Link to=
+                    {"/profile/"} style={{fontSize: '19px', marginLeft: '4%', color:'black'}}>
                     {item.postedby.name}
-                    </Link>
+                        </Link>
+                    :
+                        <Link to=
+                    {"/profile/" + item.postedby._id} style={{fontSize: '19px', marginLeft: '4%', color:'black'}}>
+                    {item.postedby.name}
+                        </Link>
+                    } 
+                          
                     {item.postedby._id.includes(state._id)
                     ?
                     <i title="Eliminar" class="bi bi-x" style={{float: 'right', fontSize: '1.5rem'}}
