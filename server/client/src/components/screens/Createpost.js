@@ -72,10 +72,10 @@ export const Createpost = () => {
                 }}
            />
            <br/>
+
            <div class="form-outline">
                 <textarea class="form-control" id="textAreaExample" rows="4" placeholder="Descripción"></textarea>
            </div>
-
            <MDBInput label="Descripción" outline style={{backgroundColor: 'white',fontSize:'15px',height:'5rem'}}
            maxLength="500"
            rows="3"
