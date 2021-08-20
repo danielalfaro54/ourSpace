@@ -60,26 +60,19 @@ export const Createpost = () => {
 
     return (
         <div className='mycard'>
-        <div className="card auth-card" style={{backgroundColor: '#fbfbfb', width:'23rem', marginTop:'4.5%'}}>
-           <h3>Crear publicación</h3>
+        <div className="card auth-card" style={{backgroundColor: '#fcfcfc', width:'24rem', marginTop:'4.5%'}}>
+           <h4  style={{fontWeight: 'bold'}}>Crear publicación</h4>
            <div>
            <MDBInput label="Título" outline style={{backgroundColor: 'white',fontSize:'15px'}}
-           maxLength="60"
+           maxLength="50"
            type='text'
            value={title}
                 onChange = {(e)=>{
                     setTitle(e.target.value)
                 }}
            />
-           <br/>
-
-           <div class="form-outline">
-                <textarea class="form-control" id="textAreaExample" rows="4" placeholder="Descripción"></textarea>
-           </div>
-           <MDBInput label="Descripción" outline style={{backgroundColor: 'white',fontSize:'15px',height:'5rem'}}
-           maxLength="500"
-           rows="3"
-           type='text'
+           <MDBInput type="textarea" label="Descripción" outline style={{backgroundColor: 'white',fontSize:'15px'}}
+           maxLength="400"
            value={body}
            onChange = {(e)=>{
                setBody(e.target.value)
@@ -87,8 +80,8 @@ export const Createpost = () => {
            />
            </div>
         <div class="file-field input-field" style={{display: 'inline-flex', marginTop:'1px', marginBottom:'1px'}}>
-            <Button basic color='violet' style={{height:'47px', width:'100px'}}>
-            <i class="bi bi-image" style={{marginRight:'4px', marginLeft:'-9px'}}></i>
+            <Button basic color='violet' style={{height:'47px', width:'89px'}}>
+            <i class="bi bi-image" style={{marginRight:'5px', marginLeft:'-9px'}}></i>
                 Subir imagen
             <input type="file"
                 onChange = {(e)=>{  
@@ -97,13 +90,13 @@ export const Createpost = () => {
             />
              </Button>
             <div className="file-path-wrapper" >
-                <input className="file-path validate" type="text"/>
+                <input className="file-path validate" type="text" style={{marginRight:'10px'}}/>
             </div>
             </div>
             <div>
             <br/>
             <Button color='violet' type="submit" name="action"
-            style = {{width:'100%', marginBottom:'0.5rem',marginTop:'0.5rem'}}
+            style = {{width:'100%', marginBottom:'0.4rem'}}
             onClick= {()=>postDetails()}
                 >Publicar
             </Button>
