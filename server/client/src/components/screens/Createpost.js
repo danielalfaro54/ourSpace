@@ -2,7 +2,7 @@ import react, { useEffect, useState } from 'react';
 import M from 'materialize-css'
 import { useHistory } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
-import { MDBInput} from 'mdbreact';
+import { MDBInput } from 'mdbreact';
 
 export const Createpost = () => {
     const [title, setTitle] = useState("")
@@ -63,14 +63,22 @@ export const Createpost = () => {
         <div className="card auth-card" style={{backgroundColor: '#fbfbfb', width:'23rem', marginTop:'4.5%'}}>
            <h3>Crear publicación</h3>
            <div>
-           <MDBInput label="Título" outline style={{backgroundColor: 'white'}}
+           <MDBInput label="Título" outline style={{backgroundColor: 'white',fontSize:'15px'}}
+           maxLength="60"
            type='text'
            value={title}
                 onChange = {(e)=>{
                     setTitle(e.target.value)
                 }}
            />
-           <MDBInput label="Descripción" outline style={{backgroundColor: 'white'}}
+           <br/>
+           <div class="form-outline">
+                <textarea class="form-control" id="textAreaExample" rows="4" placeholder="Descripción"></textarea>
+           </div>
+
+           <MDBInput label="Descripción" outline style={{backgroundColor: 'white',fontSize:'15px',height:'5rem'}}
+           maxLength="500"
+           rows="3"
            type='text'
            value={body}
            onChange = {(e)=>{
@@ -78,17 +86,16 @@ export const Createpost = () => {
            }}
            />
            </div>
-    <div class="file-field input-field" style={{display: 'inline-flex', marginTop:'1px', marginBottom:'1px'}}>
-    <Button basic color='violet' style={{height:'47px', width:'100px'}}>
-    <i class="bi bi-image" style={{marginRight:'5px', marginLeft:'-9px'}}></i>
-       Subir imagen
-       <input type="file"
+        <div class="file-field input-field" style={{display: 'inline-flex', marginTop:'1px', marginBottom:'1px'}}>
+            <Button basic color='violet' style={{height:'47px', width:'100px'}}>
+            <i class="bi bi-image" style={{marginRight:'4px', marginLeft:'-9px'}}></i>
+                Subir imagen
+            <input type="file"
                 onChange = {(e)=>{  
                     setimage(e.target.files[0])
                 }}
             />
              </Button>
-            
             <div className="file-path-wrapper" >
                 <input className="file-path validate" type="text"/>
             </div>
@@ -102,12 +109,6 @@ export const Createpost = () => {
             </Button>
             </div>
         </div>
-    </div>
-
-
-
-
-
-       
+    </div> 
     )
 }
