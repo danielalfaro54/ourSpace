@@ -1,6 +1,8 @@
 import react, { useEffect, useState } from 'react';
 import M from 'materialize-css'
 import { useHistory } from 'react-router-dom'
+import { Button } from 'semantic-ui-react'
+import { MDBInput} from 'mdbreact';
 
 export const Createpost = () => {
     const [title, setTitle] = useState("")
@@ -57,44 +59,55 @@ export const Createpost = () => {
     }
 
     return (
-        <div className= "card input-filed"
-        style= {{
-            margin: "10px auto",
-            maxWidth: "500px",
-            padding: "20px",
-            textAlign: "center"
-        }}>
-            
-            <input type="text" placeholder= "title" 
-                value={title}
+        <div className='mycard'>
+        <div className="card auth-card" style={{backgroundColor: '#fbfbfb', width:'23rem', marginTop:'4.5%'}}>
+           <h3>Crear publicación</h3>
+           <div>
+           <MDBInput label="Título" outline style={{backgroundColor: 'white'}}
+           type='text'
+           value={title}
                 onChange = {(e)=>{
                     setTitle(e.target.value)
                 }}
-            />
-            <input type= "text" placeholder= "Descripción" 
-                value={body}
-                onChange = {(e)=>{
-                    setBody(e.target.value)
-                }}
-            />
-     
-     <div class="file-field input-field">
-     <div className="btn">
-        <span>subir imagen</span>
-            <input type="file"
-                onChange = {(e)=>{
-                    
+           />
+           <MDBInput label="Descripción" outline style={{backgroundColor: 'white'}}
+           type='text'
+           value={body}
+           onChange = {(e)=>{
+               setBody(e.target.value)
+           }}
+           />
+           </div>
+    <div class="file-field input-field" style={{display: 'inline-flex', marginTop:'1px', marginBottom:'1px'}}>
+    <Button basic color='violet' style={{height:'47px', width:'100px'}}>
+    <i class="bi bi-image" style={{marginRight:'5px', marginLeft:'-9px'}}></i>
+       Subir imagen
+       <input type="file"
+                onChange = {(e)=>{  
                     setimage(e.target.files[0])
                 }}
             />
-        </div>
-            <div className="file-path-wrapper">
+             </Button>
+            
+            <div className="file-path-wrapper" >
                 <input className="file-path validate" type="text"/>
             </div>
             </div>
-            <button className="btn waves-effect waves-light"
-                onClick= {()=>postDetails()}
-            >Publicar</button>
+            <div>
+            <br/>
+            <Button color='violet' type="submit" name="action"
+            style = {{width:'100%', marginBottom:'0.5rem',marginTop:'0.5rem'}}
+            onClick= {()=>postDetails()}
+                >Publicar
+            </Button>
+            </div>
         </div>
+    </div>
+
+
+
+
+
+       
     )
 }
