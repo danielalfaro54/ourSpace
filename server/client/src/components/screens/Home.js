@@ -119,18 +119,6 @@ export const Home = () => {
       
         
     }
-//    function deleteButton(item) {
-//         if(item._id!== result.id){
-//             return(
-//                 <i class="bi bi-x" style={{float: 'right', fontSize: '1.5rem'}}
-//                         onClick={()=>{
-//                             deletePost(item._id)
-//                     }}></i>
-//             )}
-//             else{
-//                 return('');
-//         }
-//     }
 
     return (
         <div className="home">
@@ -139,22 +127,22 @@ export const Home = () => {
 
                 <div className= "card home-card" style={{height:'100%'}} key={item._id}>
                     <h5>
-                    {item.postedby._id.includes(state._id)
+                    {item.postedby._id===(state._id)
                     ?
                         <Link to=
-                    {"/profile/"} style={{fontSize: '19px', marginLeft: '4%', color:'black'}}>
+                    {"/profile/"} style={{fontSize: '17px', marginLeft: '4%', color:'black'}}>
                     {item.postedby.name}
                         </Link>
                     :
                         <Link to=
-                    {"/profile/" + item.postedby._id} style={{fontSize: '19px', marginLeft: '4%', color:'black'}}>
+                    {"/profile/" + item.postedby._id} style={{fontSize: '17px', marginLeft: '4%', color:'black'}}>
                     {item.postedby.name}
                         </Link>
                     } 
                           
-                    {item.postedby._id.includes(state._id)
+                    {item.postedby._id===(state._id)
                     ?
-                    <i title="Eliminar" class="bi bi-x" style={{float: 'right', fontSize: '1.5rem'}}
+                    <i title="Eliminar" class="bi bi-x" style={{float: 'right', fontSize: '1.6rem',marginTop:'-0.1rem'}}
                         onClick={()=>{
                             deletePost(item._id)
                     }}></i>
@@ -166,23 +154,22 @@ export const Home = () => {
                     <div className="card-image">
                     <img src={item.photo} style={{width: '100%'}} />
                     </div>
-                        <div className="card-content">
+                        <div className="card-content" style={{marginTop:'-1rem'}}>
                             {item.likes.includes(state._id)
                             ? 
-                            <i class="bi bi-hand-thumbs-up-fill" style={{fontSize: "2rem", color: '#ab47bc'}} 
+                            <i class="bi bi-heart-fill" style={{fontSize: "1.9rem", color: '#804FB3'}} 
                                 onClick={()=>{
                                     unlikePost(item._id)
                                 }}></i>
                             :
-                            <i class="bi bi-hand-thumbs-up" style={{fontSize: "2rem"}} 
+                            <i class="bi bi-heart" style={{fontSize: "1.9rem"}} 
                                 onClick={()=>{
                                     likePost(item._id)
                                 }}></i>
                             }
-                                <h6>{item.likes.length} Me gusta</h6>
+                            <h6 style={{display:'inline-flex',marginLeft:'0.6rem'}}>{item.likes.length} Me gusta</h6>
                                 <h5>{item.title}</h5>
                                 <h6>{item.body}</h6>
-                                <br/>
                                 {
                                     item.comments.map(record=>{
                                         return(
@@ -195,7 +182,8 @@ export const Home = () => {
                                     e.preventDefault()
                                     makeComment(e.target[0].value,item._id)
                                 }}>
-                                    <input type= "text" placeholder ="Escribe un comentario"/>
+                                    <input type= "text" placeholder ="Escribe un comentario"
+                                        style={{marginTop:'0.4rem', marginBottom:'-0.3rem',fontSize:'14px'}}/>
                                 </form> 
                     </div>
                 </div> 

@@ -26,6 +26,9 @@
 .links:hover {
   color: #bdbdbd;
 }
+.bi-hand-thumbs-up:hover {
+  color:purple;
+}
 .mycard{
   margin-top: 30px;
 }
