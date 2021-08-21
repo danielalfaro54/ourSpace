@@ -154,22 +154,23 @@ export const Home = () => {
                     <div className="card-image">
                     <img src={item.photo} style={{width: '100%'}} />
                     </div>
-                        <div className="card-content" style={{marginTop:'-1rem'}}>
+                        <div className="card-content" style={{marginTop:'-0.7rem'}}>
+                        <h5 style={{display:'inline-flex',fontSize: '15px'}}>{item.title}</h5>
+                        <h6 style={{display:'inline-flex',float:'right',marginLeft:'0.6rem'}}>
                             {item.likes.includes(state._id)
                             ? 
-                            <i class="bi bi-heart-fill" style={{fontSize: "1.9rem", color: '#804FB3'}} 
+                            <i class="bi bi-heart-fill" style={{fontSize: "1.5rem", color: '#804FB3', marginRight:'0.5rem'}} 
                                 onClick={()=>{
                                     unlikePost(item._id)
                                 }}></i>
                             :
-                            <i class="bi bi-heart" style={{fontSize: "1.9rem"}} 
+                            <i class="bi bi-heart" style={{fontSize: "1.5rem", marginRight:'0.5rem'}} 
                                 onClick={()=>{
                                     likePost(item._id)
                                 }}></i>
                             }
-                            <h6 style={{display:'inline-flex',marginLeft:'0.6rem'}}>{item.likes.length} Me gusta</h6>
-                                <h5>{item.title}</h5>
-                                <h6>{item.body}</h6>
+                            <h6 style={{marginTop:'0.25rem', marginLeft:'0.1rem',color:'grey',fontSize:'13px',fontWeight:'bold'}}>{item.likes.length}</h6></h6>
+                            <h6 style={{fontSize: '13.5px'}}>{item.body}</h6>
                                 {
                                     item.comments.map(record=>{
                                         return(
@@ -183,7 +184,7 @@ export const Home = () => {
                                     makeComment(e.target[0].value,item._id)
                                 }}>
                                     <input type= "text" placeholder ="Escribe un comentario"
-                                        style={{marginTop:'0.4rem', marginBottom:'-0.3rem',fontSize:'14px'}}/>
+                                        style={{marginTop:'0.4rem', marginBottom:'-0.3rem',fontSize:'13.5px'}}/>
                                 </form> 
                     </div>
                 </div> 
