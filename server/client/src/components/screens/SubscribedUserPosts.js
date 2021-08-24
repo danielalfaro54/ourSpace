@@ -124,57 +124,72 @@ export const SubscribedUserPosts = () => {
         <div className="home">
             {data.map(item=>{
             return(
-                <div className= "card home-card" key={item._id}>
-                    <h5><Link to={"/profile/" + item.postedby._id}>
-                        {item.postedby.name}
-                    </Link>
-                    <i class="x" style={{float:"right"}}
+
+                <div className= "card home-card" style={{height:'100%'}} key={item._id}>
+                    <h5>
+                    {item.postedby._id===(state._id)
+                    ?
+                        <Link to=
+                    {"/profile/"} style={{fontSize: '14.5px', marginLeft: '4%', color:'black',fontWeight:'bold'}}>
+                    {item.postedby.name}
+                        </Link>
+                    :
+                        <Link to=
+                    {"/profile/" + item.postedby._id} style={{fontSize: '14.5px', marginLeft: '4%', color:'black', fontWeight:'bold'}}>
+                    {item.postedby.name}
+                        </Link>
+                    } 
+                          
+                    {item.postedby._id===(state._id)
+                    ?
+                    <i title="Eliminar" class="bi bi-x" style={{float: 'right', fontSize: '1.6rem',marginTop:'-0.1rem'}}
                         onClick={()=>{
                             deletePost(item._id)
                     }}></i>
+                    :
+                    <i></i>
+                    }    
                     </h5>
-
+                    
                     <div className="card-image">
-                    <img src={item.photo}/>
+                    <img src={item.photo} style={{width: '100%'}} />
                     </div>
-                        <div className="card-content">
+                        <div className="card-content" style={{marginTop:'-0.7rem'}}>
+                        <h5 style={{display:'inline-flex',fontSize: '15px'}}>{item.title}</h5>
+                        <h6 style={{display:'inline-flex',float:'right',marginLeft:'0.6rem'}}>
                             {item.likes.includes(state._id)
                             ? 
-                            <i class="hand-thumbs-up" style={{fontsize: "2rem"}} 
-                            onClick={()=>{
-                                unlikePost(item._id)
-                            }}></i>
-                        :
-                            <i class="hand-thumbs-up" style={{fontsize: "2rem"}} 
-                            onClick={()=>{
-                                likePost(item._id)
-                            }}></i>
+                            <i class="bi bi-heart-fill" style={{fontSize: "1.5rem", color: '#804FB3', marginRight:'0.5rem'}} 
+                                onClick={()=>{
+                                    unlikePost(item._id)
+                                }}></i>
+                            :
+                            <i class="bi bi-heart" style={{fontSize: "1.5rem", marginRight:'0.5rem'}} 
+                                onClick={()=>{
+                                    likePost(item._id)
+                                }}></i>
                             }
-                                <h6>{item.likes.length} likes</h6>
-                                <h6>{item.title}</h6>
-                                <p>{item.body}</p>
-                                    <input type= "text" placeholder ="add a comment"/>
-                                {/* {
+                            <h6 style={{marginTop:'0.25rem', marginLeft:'0.1rem',color:'grey',fontSize:'13px',fontWeight:'bold'}}>{item.likes.length}</h6></h6>
+                            <h6 style={{fontSize: '13.5px'}}>{item.body}</h6>
+                                {
                                     item.comments.map(record=>{
                                         return(
-                                            <h6><span style={{fontWeight:'500'}}>{record.postedBy.name}
+                                            <h6><span style={{fontWeight:'500'}}>{record===undefined?"loading":record.postedBy===undefined?"loading":record.postedBy.name}
                                             </span>{record.text}</h6>
                                         )
                                     })
                                 }
-
                                 <form onSubmit={(e)=>{
                                     e.preventDefault()
                                     makeComment(e.target[0].value,item._id)
                                 }}>
-                                    <input type= "text" placeholder ="add a comment"/>
-                                </form>  */}
+                                    <input type= "text" placeholder ="Escribe un comentario"
+                                        style={{marginTop:'0.4rem', marginBottom:'-0.3rem',fontSize:'13.5px',fontWeight:'lighter'}}/>
+                                </form> 
                     </div>
                 </div> 
             )
-
         })}
-            
         </div>
     )
 }

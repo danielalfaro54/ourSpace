@@ -3,6 +3,7 @@ import {UserContext} from '../../App'
 import 'semantic-ui-css/semantic.min.css'
 import { Link } from 'react-router-dom'
 import './Home.css';
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle,MDBDropdownItem} from 'mdbreact';
 
 export const Home = () => {
     const [data,setData] = useState([])
@@ -115,9 +116,7 @@ export const Home = () => {
             setData(newData)
          }).catch(err=>{
              console.log(err)
-         })
-      
-        
+         }) 
     }
 
     return (
@@ -130,12 +129,12 @@ export const Home = () => {
                     {item.postedby._id===(state._id)
                     ?
                         <Link to=
-                    {"/profile/"} style={{fontSize: '17px', marginLeft: '4%', color:'black'}}>
+                    {"/profile/"} style={{fontSize: '14.5px', marginLeft: '4%', color:'black',fontWeight:'bold'}}>
                     {item.postedby.name}
                         </Link>
                     :
                         <Link to=
-                    {"/profile/" + item.postedby._id} style={{fontSize: '17px', marginLeft: '4%', color:'black'}}>
+                    {"/profile/" + item.postedby._id} style={{fontSize: '14.5px', marginLeft: '4%', color:'black', fontWeight:'bold'}}>
                     {item.postedby.name}
                         </Link>
                     } 
@@ -184,7 +183,7 @@ export const Home = () => {
                                     makeComment(e.target[0].value,item._id)
                                 }}>
                                     <input type= "text" placeholder ="Escribe un comentario"
-                                        style={{marginTop:'0.4rem', marginBottom:'-0.3rem',fontSize:'13.5px'}}/>
+                                        style={{marginTop:'0.4rem', marginBottom:'-0.3rem',fontSize:'13.5px',fontWeight:'lighter'}}/>
                                 </form> 
                     </div>
                 </div> 
