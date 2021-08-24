@@ -3,7 +3,7 @@ import {UserContext} from '../../App'
 import 'semantic-ui-css/semantic.min.css'
 import { Link } from 'react-router-dom'
 import './Home.css';
-import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle,MDBDropdownItem} from 'mdbreact';
+import { Button } from 'semantic-ui-react'
 
 export const Home = () => {
     const [data,setData] = useState([])
@@ -119,11 +119,22 @@ export const Home = () => {
          }) 
     }
 
-    return (
+    return (  
         <div className="home">
+            <div style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop:"2%",
+                width:'100%'}}>
+                <Button.Group basic widths='3' style={{width:'33rem'}}>
+                  <Button>Todo</Button>
+                  <Button>Siguiendo</Button>
+                  <Button>Mis publicaciones</Button>
+                </Button.Group>
+            </div>
             {data.map(item=>{
             return(
-
+                
                 <div className= "card home-card" style={{height:'100%'}} key={item._id}>
                     <h5>
                     {item.postedby._id===(state._id)
