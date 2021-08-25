@@ -126,6 +126,7 @@ export const Home = () => {
                 justifyContent: "center",
                 marginTop:"2%",
                 width:'100%'}}>
+                    
                 <Button.Group basic widths='3' style={{width:'33rem'}}>
                   <Button>Todo</Button>
                   <Button>Siguiendo</Button>
