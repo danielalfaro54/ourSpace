@@ -33,6 +33,13 @@
 .links2:hover {
   color: #9d9d9d;
 }
+.sortbar {
+  color:red;
+}
+.sortbar:hover {
+  background-color: blue;
+  color:red;
+}
 .bi-heart:hover {
   color:#804FB3;
 }

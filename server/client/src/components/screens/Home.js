@@ -129,7 +129,7 @@ export const Home = () => {
                 marginTop:"2%",
                 width:'100%'}}>
             <Button.Group basic widths='3' style={{width:'33rem'}}>
-                  <Button>
+                  <Button className='sortbar'>
                       <Link to="/" className='links2'>
                         Todo
                       </Link>
