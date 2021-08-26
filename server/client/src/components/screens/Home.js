@@ -128,12 +128,23 @@ export const Home = () => {
                 justifyContent: "center",
                 marginTop:"2%",
                 width:'100%'}}>
-                    
-                <Button.Group basic widths='3' style={{width:'33rem'}}>
-                  <Button>Todo</Button>
-                  <Button>Siguiendo</Button>
-                  <Button>Mis publicaciones</Button>
-                </Button.Group>
+            <Button.Group basic widths='3' style={{width:'33rem'}}>
+                  <Button>
+                      <Link to="/">
+                        Todo
+                      </Link>
+                  </Button>
+                  <Button>
+                       <Link to="/myfollowingposts" >
+                        Siguiendo
+                       </Link>
+                  </Button>
+                  <Button>
+                       <Link to="/myfollowingposts">
+                        Mis publicaciones
+                       </Link>
+                  </Button>      
+            </Button.Group>
             </div>
             {data.map(item=>{
             return(
