@@ -130,17 +130,17 @@ export const Home = () => {
                 width:'100%'}}>
             <Button.Group basic widths='3' style={{width:'33rem'}}>
                   <Button>
-                      <Link to="/">
+                      <Link to="/" className='links2'>
                         Todo
                       </Link>
                   </Button>
                   <Button>
-                       <Link to="/myfollowingposts" >
+                       <Link to="/myfollowingposts" className='links2'>
                         Siguiendo
                        </Link>
                   </Button>
                   <Button>
-                       <Link to="/myfollowingposts">
+                       <Link to="/myfollowingposts" className='links2'>
                         Mis publicaciones
                        </Link>
                   </Button>      

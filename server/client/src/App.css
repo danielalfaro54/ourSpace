@@ -1,7 +1,7 @@
 .b{
   margin-left: 15px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-  
+
 }
 .singinc {
   text-align: center;
@@ -26,6 +26,12 @@
 }
 .links:hover {
   color: #bdbdbd;
+}
+.links2 {
+  color: #454545;
+}
+.links2:hover {
+  color: #9d9d9d;
 }
 .bi-heart:hover {
   color:#804FB3;
