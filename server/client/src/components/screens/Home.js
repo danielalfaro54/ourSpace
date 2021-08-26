@@ -4,6 +4,8 @@ import 'semantic-ui-css/semantic.min.css'
 import { Link } from 'react-router-dom'
 import './Home.css';
 import { Button } from 'semantic-ui-react'
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export const Home = () => {
     const [data,setData] = useState([])
@@ -155,7 +157,20 @@ export const Home = () => {
                     ?
                     <i title="Eliminar" class="bi bi-x" style={{float: 'right', fontSize: '1.6rem',marginTop:'-0.1rem'}}
                         onClick={()=>{
-                            deletePost(item._id)
+                            confirmAlert({
+                                title: 'Eliminar',
+                                message: '¿Estás seguro de que quieres borrar la publicación?',
+                                buttons: [
+                                  {
+                                    label: 'Sí',
+                                    onClick: () => deletePost(item._id)
+                                  },
+                                  {
+                                    label: 'No, cancelar',
+                                    onClick: () => <i/>
+                                  }
+                                ]
+                              }); 
                     }}></i>
                     :
                     <i></i>
