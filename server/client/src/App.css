@@ -16,6 +16,9 @@
   width: 9.5rem;
   height: 9.5rem;
 }
+.nav-menu{
+  display:'flex';
+}
 .navbarz{
   display:'flex';
   position: sticky;
