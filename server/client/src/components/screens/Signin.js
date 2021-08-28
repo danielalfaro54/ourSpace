@@ -4,6 +4,8 @@ import { UserContext } from '../../App'
 import M from 'materialize-css';
 import { Button } from 'semantic-ui-react'
 import { MDBInput} from 'mdbreact';
+//import { ToastContainer, toast } from 'react-toastify';
+//import 'react-toastify/dist/ReactToastify.css';
 
 export const Signin= () => {
     const {state,dispatch} = useContext(UserContext)
@@ -13,7 +15,7 @@ export const Signin= () => {
     const PostData = ()=>{
         //verifiyng email format
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            M.toast({html:'Correo electrónico inválido'})
+            M.toast({html: 'Correo electrónico inválido',classes:'#0f0f0f black darken-3'})
             return
         }
         fetch("/signin",{
@@ -42,6 +44,9 @@ export const Signin= () => {
         console.log(err)
     })
     }
+
+    const notify = () => toast("Wow so easy!");
+
     return (
         <div className='mycard'>
         <div className="card auth-card" style={{backgroundColor: '#fbfbfb', width:'23rem', marginTop:'5%'}}>

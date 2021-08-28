@@ -3,6 +3,8 @@ import { Link, useHistory } from 'react-router-dom'
 import M from 'materialize-css'
 import { Button } from 'semantic-ui-react'
 import { MDBInput} from 'mdbreact';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 export const Signup= () => {
     const history = useHistory()
