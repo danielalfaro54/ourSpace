@@ -4,8 +4,6 @@ import { UserContext } from '../../App'
 import M from 'materialize-css';
 import { Button } from 'semantic-ui-react'
 import { MDBInput} from 'mdbreact';
-//import { ToastContainer, toast } from 'react-toastify';
-//import 'react-toastify/dist/ReactToastify.css';
 
 export const Signin= () => {
     const {state,dispatch} = useContext(UserContext)
@@ -32,12 +30,12 @@ export const Signin= () => {
     }).then(res=>res.json())
     .then(data=>{
         if(data.error){
-            M.toast({html:data.error})
+            M.toast({html: 'La contraseña y correo no coinciden',classes:'#0f0f0f black darken-3'})
         }else{
             localStorage.setItem('jwt',data.token)
             localStorage.setItem('user',JSON.stringify(data.user))
             dispatch({type:"USER",payload:data.user})
-            M.toast({html:"Ingresó correctamente"})
+            M.toast({html: 'Ingresó correctamente',classes:'#0f0f0f black darken-3'})
             history.push("/")
         }
     }).catch(err=>{

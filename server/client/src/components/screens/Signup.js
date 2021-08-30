@@ -3,8 +3,6 @@ import { Link, useHistory } from 'react-router-dom'
 import M from 'materialize-css'
 import { Button } from 'semantic-ui-react'
 import { MDBInput} from 'mdbreact';
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
 
 export const Signup= () => {
     const history = useHistory()
@@ -39,7 +37,7 @@ export const Signup= () => {
 
     const uploadFields = () => {
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            M.toast({html:"Correo electrónico inválido"})
+            M.toast({html: 'Correo electrónico inválido',classes:'#0f0f0f black darken-3'})
             return
         }
         fetch("/signup",{
@@ -57,9 +55,9 @@ export const Signup= () => {
         )
     }).then(res=>res.json()).then(data=>{
         if(data.error){
-            M.toast({html:data.error})
+            M.toast({html: 'Completa todos los campos obligatorios',classes:'#0f0f0f black darken-3'})
         }else{
-            M.toast({html:data.message})
+            M.toast({html: 'Registro exitoso!. Inicia sesión',classes:'#0f0f0f black darken-3'})
             history.push("/signin")
         }
     }).catch(err=>{

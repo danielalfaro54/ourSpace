@@ -28,10 +28,9 @@ export const Createpost = () => {
                 )
             }).then(res=>res.json()).then(data=>{
                 if(data.error){
-    
-                    M.toast({html:data.error})
+                    M.toast({html:'Completa todos los campos',classes:'#0f0f0f black darken-3'})
                 }else{
-                    M.toast({html:"La publicación fue realizada"})
+                    M.toast({html:'La publicación fue realizada',classes:'#0f0f0f black darken-3'})
                     history.push("/")
                 }
             }).catch(err=>{
@@ -51,6 +50,7 @@ export const Createpost = () => {
             body:data
         }).then(res=>res.json())
         .then(data=>{
+            M.toast({html:'Completa todos los campos',classes:'#0f0f0f black darken-3'})
              seturl(data.url)
         }).catch(err=>{
             console.log(err);
