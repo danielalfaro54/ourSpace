@@ -13,29 +13,7 @@ export const Createpost = () => {
 
     useEffect(() => {
         if(url) {
-            fetch("/createpost",{
-                method:"post",
-                headers:{
-                    "Content-Type":"application/json",
-                    "Authorization":"Bearer " + localStorage.getItem("jwt")
-                },
-                body:JSON.stringify(
-                    {
-                        title,
-                        body,
-                        pic:url
-                    }
-                )
-            }).then(res=>res.json()).then(data=>{
-                if(data.error){
-                    M.toast({html:'Completa todos los campos',classes:'#0f0f0f black darken-3'})
-                }else{
-                    M.toast({html:'La publicación fue realizada',classes:'#0f0f0f black darken-3'})
-                    history.push("/")
-                }
-            }).catch(err=>{
-                console.log(err)
-            })
+            uploadFields()
         }
     }, [url])
 
@@ -44,18 +22,49 @@ export const Createpost = () => {
         data.append("file",image)
         data.append("upload_preset","SocialNetwork9")
         data.append("cloud_name","danielalfa98")
-        
         fetch("https://api.cloudinary.com/v1_1/danielalfa98/image/upload",{
             method:"post",
             body:data
         }).then(res=>res.json())
         .then(data=>{
-            M.toast({html:'Completa todos los campos',classes:'#0f0f0f black darken-3'})
              seturl(data.url)
         }).catch(err=>{
             console.log(err);
         })
-        
+    }
+
+    const uploadFields = () => {
+        fetch("/createpost",{
+            method:"post",
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization":"Bearer " + localStorage.getItem("jwt")
+            },
+            body:JSON.stringify(
+                {
+                    title,
+                    body,
+                    pic:url
+                }
+            )
+        }).then(res=>res.json()).then(data=>{
+            if(data.error){
+                M.toast({html:'Completa todos los campos',classes:'#0f0f0f black darken-3'})
+            }else{
+                M.toast({html:'La publicación fue realizada',classes:'#0f0f0f black darken-3'})
+                history.push("/")
+            }
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+
+    const PostData = ()=>{
+        if(image){
+            uploadFields()
+        } else{
+            uploadFields()
+        }
     }
 
     return (
@@ -97,7 +106,7 @@ export const Createpost = () => {
             <br/>
             <Button color='violet' type="submit" name="action"
             style = {{width:'100%', marginBottom:'0.4rem'}}
-            onClick= {()=>postDetails()}
+            onClick= {()=>PostData()}
                 >Publicar
             </Button>
             </div>

@@ -71,8 +71,8 @@ export const Signup= () => {
         } else{
             uploadFields()
         }
-       
     }
+    
     return (
         <div className='mycard'>
         <div className="card auth-card" style={{backgroundColor: '#fbfbfb', width:'23rem', marginTop:'2%'}}>
