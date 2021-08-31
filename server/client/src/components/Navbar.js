@@ -11,7 +11,7 @@ const Navbar= ()=>{
         <>
           <li><Link to="/create" className='links'>Publicar</Link></li>
           <li><Link to="/profile" className='links'>Mi Perfil</Link></li>
-          <li><Link to="/myfollowingposts" className='links'>Siguiendo</Link></li>
+          <li><Link to="/followingposts" className='links'>Siguiendo</Link></li>
           <li><Link className='links' 
            onClick={()=>{
             localStorage.clear()

@@ -126,29 +126,23 @@ export const Home = () => {
             <div style={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop:"2%",
+                marginTop:"2.4%",
                 width:'100%'}}>
-            <Button.Group basic widths='3' style={{width:'33rem'}}>
+            <Button.Group basic widths='2' style={{width:'24rem'}}>
                   <Button className='sortbar'>
                       <Link to="/" className='links2'>
                         Todo
                       </Link>
                   </Button>
                   <Button>
-                       <Link to="/myfollowingposts" className='links2'>
+                       <Link to="/followingposts" className='links2'>
                         Siguiendo
                        </Link>
-                  </Button>
-                  <Button>
-                       <Link to="/myfollowingposts" className='links2'>
-                        Mis publicaciones
-                       </Link>
-                  </Button>      
+                  </Button>     
             </Button.Group>
             </div>
             {data.map(item=>{
             return(
-                
                 <div className= "card home-card" style={{height:'100%'}} key={item._id}>
                     <h5>
                     {item.postedby._id===(state._id)

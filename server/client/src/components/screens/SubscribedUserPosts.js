@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import {UserContext} from '../../App'
 import 'semantic-ui-css/semantic.min.css'
 import { Link } from 'react-router-dom'
-
+import { Button } from 'semantic-ui-react'
 
 export const SubscribedUserPosts = () => {
     const [data,setData] = useState([])
@@ -122,6 +122,24 @@ export const SubscribedUserPosts = () => {
 
     return (
         <div className="home">
+            <div style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop:"2.4%",
+                width:'100%'}}>
+            <Button.Group basic widths='2' style={{width:'24rem'}}>
+                  <Button className='sortbar'>
+                      <Link to="/" className='links2'>
+                        Todo
+                      </Link>
+                  </Button>
+                  <Button>
+                       <Link to="/followingposts" className='links2'>
+                        Siguiendo
+                       </Link>
+                  </Button>     
+            </Button.Group>
+            </div>
             {data.map(item=>{
             return(
 

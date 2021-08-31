@@ -45,7 +45,7 @@ const Routing = ()=>{
         <Route path = '/profile/:userid'>
           <UserProfile/>
         </Route>
-        <Route path = '/myfollowingposts'>
+        <Route path = '/followingposts'>
           <SubscribedUserPosts/>
         </Route>
     </Switch>
