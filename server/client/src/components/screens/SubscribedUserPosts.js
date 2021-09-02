@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react'
 import {UserContext} from '../../App'
 import 'semantic-ui-css/semantic.min.css'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { Button } from 'semantic-ui-react'
 
 export const SubscribedUserPosts = () => {
     const [data,setData] = useState([])
     const {state,dispatch}= useContext(UserContext)
+    const history = useHistory()
 
     useEffect(() => {
         fetch('/getsubpost',{
@@ -89,37 +90,6 @@ export const SubscribedUserPosts = () => {
         })
     }
 
-    // const makeComment = (text,postId)=>{
-    //     fetch('/comment',{
-    //         method:"put",
-    //         headers:{
-    //             "Content-Type":"application/json",
-    //             "Authorization":"Bearer" +localStorage.getItem("jwt")
-    //         },
-    //         body:JSON.stringify({
-    //             postId,
-    //             name:localStorage.getItem("user").name,
-    //             text
-    //         })
-    //     }).then(res=>res.json())
-    //     .then(result=>{
-    //         console.log(result);
-    //         const newData = data.map(item=>{
-    //             if(item._id==result._id){
-    //                 return result
-    //             }else{
-    //                 return item
-    //             }
-    //         })
-            
-    //         setData(newData)
-    //      }).catch(err=>{
-    //          console.log(err)
-    //      })
-      
-        
-    // }
-
     return (
         <div className="home">
             <div style={{
@@ -127,16 +97,18 @@ export const SubscribedUserPosts = () => {
                 justifyContent: "center",
                 marginTop:"2.4%",
                 width:'100%'}}>
-            <Button.Group basic widths='2' style={{width:'24rem'}}>
-                  <Button className='sortbar'>
-                      <Link to="/" className='links2'>
-                        Todo
-                      </Link>
+           <Button.Group basic widths='2' style={{width:'24rem'}}>
+                  <Button
+                    onClick={()=>{
+                        history.push("/")}}>
+                        Recientes
                   </Button>
-                  <Button>
-                       <Link to="/followingposts" className='links2'>
-                        Siguiendo
-                       </Link>
+                  <Button basic color='black'
+                    onClick={()=>{
+                         history.push("/followingposts")}}>
+                        <Link to="/" className='links2' style={{color:'#333333',fontWeight:'bold'}}>
+                            Siguiendo
+                        </Link>
                   </Button>     
             </Button.Group>
             </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import {UserContext} from '../../App'
 import 'semantic-ui-css/semantic.min.css'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './Home.css';
 import { Button } from 'semantic-ui-react'
 import { confirmAlert } from 'react-confirm-alert'; 
@@ -10,6 +10,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 export const Home = () => {
     const [data,setData] = useState([])
     const {state,dispatch}= useContext(UserContext)
+    const history = useHistory()
 
     useEffect(() => {
         fetch('/allpost',{
@@ -129,15 +130,17 @@ export const Home = () => {
                 marginTop:"2.4%",
                 width:'100%'}}>
             <Button.Group basic widths='2' style={{width:'24rem'}}>
-                  <Button className='sortbar'>
-                      <Link to="/" className='links2'>
-                        Todo
-                      </Link>
+                  <Button basic color='black'
+                    onClick={()=>{
+                        history.push("/")}}>
+                    <Link to="/" className='links2' style={{color:'#333333',fontWeight:'bold'}}>
+                        Recientes
+                    </Link>
                   </Button>
-                  <Button>
-                       <Link to="/followingposts" className='links2'>
-                        Siguiendo
-                       </Link>
+                  <Button
+                    onClick={()=>{
+                         history.push("/followingposts")}}>
+                    Siguiendo
                   </Button>     
             </Button.Group>
             </div>
