@@ -26,10 +26,10 @@
   z-index: 1;
 }
 .links {
-  color: white;
+  color: #bdbdbd;
 }
 .links:hover {
-  color: #bdbdbd;
+  color: white;
 }
 .links2 {
   color: #454545;
