@@ -29,8 +29,8 @@ export const Profile= () => {
                     src={state?state.pic:"loading"}
                 ></img>
                 </div>
-                <div style={{marginTop:'1.2rem',marginLeft:'6%'}}>   
-                    <h6 style={{fontSize:'20px', fontWeight:'400'}}>{state?state.name:"loading"}</h6>
+                <div style={{marginTop:'1.4rem',marginLeft:'6%'}}>   
+                    <h6 style={{fontSize:'19px', fontWeight:'400'}}>{state?state.name:"loading"}</h6>
                     <div style={{
                         display: "flex",
                         justifyContent: "flex-start",
