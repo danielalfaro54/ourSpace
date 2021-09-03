@@ -10,7 +10,7 @@ const Navbar= ()=>{
       return [
         <>
           <li><Link to="/create" className='links'>Publicar</Link></li>
-          <li><Link to="/profile" className='links'>Mi Perfil</Link></li>
+          {/* <li><Link to="/profile" className='links'>Mi Perfil</Link></li> */}
           <li><Link className='links' 
            onClick={()=>{
             localStorage.clear()
@@ -34,7 +34,7 @@ const Navbar= ()=>{
       <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1628646860/e8e1153d4d014fdb9000a0a4e479b497_qtgxig_c0ht6b.png' style={{ height:'28px', paddingRight:'10px'}} />
         ourSpace
       </Link>
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
+      <ul id="nav-mobile" className="right">
         
         {renderList()}
         
