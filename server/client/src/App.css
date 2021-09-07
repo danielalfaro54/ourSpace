@@ -20,7 +20,8 @@
   display:'flex';
 }
 .navbarz{
-  display:'flex';
+  display:'inside';
+  /* display:'flex'; */
   position: sticky;
   top: 0;
   z-index: 1;
