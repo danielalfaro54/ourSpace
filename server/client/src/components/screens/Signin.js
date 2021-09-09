@@ -73,7 +73,7 @@ export const Signin= () => {
            
         <hr style={{width:'100%', marginTop:'22px', marginBottom:'22px'}}/>
            
-        <h6>¿Primera vez aquí?<Link to='/signup'> Regístrate.
+        <h6 style={{fontSize:'13.5px'}}>¿Primera vez aquí?<Link to='/signup'> Regístrate.
         </Link></h6>
       </div>
         </div>
