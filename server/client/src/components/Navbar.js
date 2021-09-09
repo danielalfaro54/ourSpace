@@ -9,9 +9,11 @@ const Navbar= ()=>{
   const renderList = ()=>{
     if(state){
       const trigger = (
-        <span style={{display:'inline-flex',marginInline:'11px'}}>
-          <Image style={{marginTop:'17px',fontSize:'12px'}} avatar src={state.pic} />
-          <i class="bi bi-caret-down-fill" style={{color:'white',fontSize:'0.7rem'}}></i>
+        <span style={{display:'inline-flex',marginRight:'17px'}}>
+          <div>
+          <img className='profileimg2' src={state.pic} />
+          </div>
+          <i class="bi bi-caret-down-fill" style={{color:'white',fontSize:'0.6rem',marginTop:'2px'}}></i>
         </span>
       )
       
@@ -25,7 +27,9 @@ const Navbar= ()=>{
       
       return [
         <>
-          <li><Link to="/create" className='links' style={{fontSize:'14px',marginTop:'1.5px'}}>Publicar</Link></li>
+          <li><Link to="/create" className='links' 
+          style={{fontSize:'13.5px',marginTop:'0.4px', marginRight:'10px', display:'inline-flex'}}>
+          <i class="bi bi-plus" style={{fontSize:'17px'}}></i>Publicar</Link></li>
             <Dropdown
               trigger={trigger}
               options={options}
