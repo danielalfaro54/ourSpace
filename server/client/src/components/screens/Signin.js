@@ -46,11 +46,11 @@ export const Signin= () => {
     const notify = () => toast("Wow so easy!");
 
     return (
-        <div style={{display:'inline-flex',width:'100%',justifyContent:'center',merginTop:'5rem'}}>
-        <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1631168331/iStock-1149316189_pualx3.jpg'
-        style={{height:'25rem',marginTop:'2rem',marginRight:'3rem'}}></img>
+        <div style={{display:'inline-flex',width:'100%',justifyContent:'center',marginTop:'7%'}}>
+        <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1631217683/Webp.net-resizeimage_dbaweb.png'
+        style={{height:'200px',marginTop:'6rem',marginRight:'5rem'}}></img>
         <div className='mycard'>
-        <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem', marginTop:'5%'}}>
+        <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
            <h3>Iniciar sesión</h3>
            <div>
            <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}

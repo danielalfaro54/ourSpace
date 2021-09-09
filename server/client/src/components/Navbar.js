@@ -54,8 +54,10 @@ const Navbar= ()=>{
       ]
     }
   }
-
-    return (<nav className='navbarz'>
+  if(state) {
+    return (
+    
+    <nav className='navbarz'>
 
     <div className="nav-wrapper #212121 grey darken-4">
       <Link to={state?"/":"/signin"} className="brand-logo left b" style={{fontSize:'20px', color:'white'}}>
@@ -68,6 +70,11 @@ const Navbar= ()=>{
         
       </ul>
     </div>
-  </nav>)
+  </nav>
+    )
+  }
+  else {
+    return('');
+  }
 }
 export default Navbar
