@@ -47,7 +47,7 @@ export const Signin= () => {
 
     return (
         <div style={{display:'inline-flex',width:'100%',justifyContent:'center',marginTop:'7%'}}>
-        <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1631217683/Webp.net-resizeimage_dbaweb.png'
+        <img id="optionalstuff" src='https://res.cloudinary.com/danielalfa98/image/upload/v1631217683/Webp.net-resizeimage_dbaweb.png'
         style={{height:'200px',marginTop:'6rem',marginRight:'5rem'}}></img>
         <div className='mycard'>
         <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
