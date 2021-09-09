@@ -18,7 +18,8 @@ const Navbar= ()=>{
       )
       
       const options = [
-        { key: 'user', text: 'Mi perfil', href:'/profile'},
+        { },
+        { key: 'user',text: 'Mi perfil', href:'/profile'},
         { key: 'sign-out', text: 'Cerrar sesión', onClick:()=>{
           localStorage.clear()
           dispatch({type:"CLEAR"})

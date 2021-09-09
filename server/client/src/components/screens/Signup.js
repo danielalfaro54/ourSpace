@@ -75,7 +75,7 @@ export const Signup= () => {
     
     return (
         <div className='mycard'>
-        <div className="card auth-card" style={{backgroundColor: '#fbfbfb', width:'23rem', marginTop:'2%'}}>
+        <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem', marginTop:'2%'}}>
            <h3>Registrarse</h3>
            <div>
            <MDBInput label="Nombre" outline style={{backgroundColor: 'white'}}
