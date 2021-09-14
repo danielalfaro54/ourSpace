@@ -79,6 +79,7 @@ export const Signup= () => {
            <h3>Registrarse</h3>
            <div>
            <MDBInput label="Nombre" outline style={{backgroundColor: 'white'}}
+           maxLength="29"
            type='text'
            value= {name}
            onChange = {(e)=>{
@@ -86,6 +87,7 @@ export const Signup= () => {
            }}
            />
            <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
+           maxLength="29"
            type='text'
            value= {email}
            onChange = {(e)=>{
@@ -93,6 +95,7 @@ export const Signup= () => {
            }}
            />
            <MDBInput label="Contraseña" outline style={{backgroundColor: 'white'}}
+           maxLength="46"
            type='password'
            value= {password}
            onChange = {(e)=>{

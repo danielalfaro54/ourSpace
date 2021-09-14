@@ -60,11 +60,11 @@ export const Createpost = () => {
 
     return (
         <div className='mycard'>
-        <div className="card auth-card" style={{backgroundColor: '#fcfcfc', width:'24rem', marginTop:'4.5%'}}>
+        <div className="card auth-card" style={{width:'24rem', marginTop:'4.5%'}}>
            <h4  style={{fontWeight: 'bold'}}>Crear publicación</h4>
            <div>
            <MDBInput label="Título" outline style={{backgroundColor: 'white',fontSize:'15px'}}
-           maxLength="50"
+           maxLength="33"
            type='text'
            value={title}
                 onChange = {(e)=>{
