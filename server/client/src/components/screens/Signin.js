@@ -43,12 +43,14 @@ export const Signin= () => {
     })
     }
 
-    const notify = () => toast("Wow so easy!");
-
     return (
-        <div style={{display:'inline-flex',width:'100%',justifyContent:'center',marginTop:'7%'}}>
-        {/* <img id="optionalstuff" src='https://res.cloudinary.com/danielalfa98/image/upload/v1631217683/Webp.net-resizeimage_dbaweb.png'
-        style={{height:'200px',marginTop:'6rem',marginRight:'5rem'}}></img> */}
+        <div style={{display:'inline-flex',width:'100%',justifyContent:'center'}}>
+        <div id='optionalstuff' style={{marginTop:'6.5rem',marginRight:'7rem'}}>
+            <h1 className='titleText'
+            style={{fontWeight:'bold',fontSize:'4rem'}}>ourSpace</h1>
+            <br/>
+            <h5 style={{width:'22rem'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h5>     
+        </div>
         <div className='mycard'>
         <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
            <h3>Iniciar sesión</h3>

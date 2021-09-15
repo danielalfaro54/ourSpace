@@ -58,7 +58,6 @@ const Navbar= ()=>{
     return (
     
     <nav className='navbarz'>
-
     <div className="nav-wrapper #212121 grey darken-4">
       <Link to={state?"/":"/signin"} className="brand-logo left b" style={{fontSize:'20px', color:'white'}}>
       <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1628646860/e8e1153d4d014fdb9000a0a4e479b497_qtgxig_c0ht6b.png' style={{ height:'27px', paddingRight:'11px'}} />
@@ -74,7 +73,20 @@ const Navbar= ()=>{
     )
   }
   else {
-    return('');
+    return(
+      <div id='optionalstuff1'>
+      <nav className='navbarz'>
+    <div className="nav-wrapper #212121 grey darken-4">
+      <Link to={state?"/":"/signin"} className="brand-logo left b" style={{fontSize:'20px', color:'white'}}>
+      <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1628646860/e8e1153d4d014fdb9000a0a4e479b497_qtgxig_c0ht6b.png' style={{ height:'27px', paddingRight:'11px'}} />
+        ourSpace
+      </Link>
+      <ul id="nav-mobile" className="right">
+      </ul>
+    </div>
+  </nav>
+  </div>
+    );
   }
 }
 export default Navbar
