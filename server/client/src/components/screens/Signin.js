@@ -44,6 +44,7 @@ export const Signin= () => {
     }
 
     return (
+        <div style={{height:'100wh',width:'100%'}}>
         <div style={{display:'inline-flex',width:'100%',justifyContent:'center'}}>
         <div id='optionalstuff' style={{marginTop:'6.5rem',marginRight:'7rem'}}>
             <h1 className='titleText'
@@ -83,6 +84,7 @@ export const Signin= () => {
         <h6 style={{fontSize:'13.5px'}}>¿Primera vez aquí?<Link to='/signup'> Regístrate.
         </Link></h6>
       </div>
+        </div>
         </div>
         </div>
     )

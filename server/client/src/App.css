@@ -33,11 +33,10 @@
   }
 }
 @media (min-width:800px) {
-  div#optionalstuff1 {
+  nav#optionalstuff1 {
     display: none;
   }
 }
-$font: 'Poppins', sans-serif;
 
 ::selection { background-color: #C3CFE2; }
 
@@ -56,7 +55,6 @@ body {
 	-webkit-text-fill-color: transparent;
 	font: {
 		size: 20vw;
-		family: $font;
 	};
 }
 .nav-menu{
