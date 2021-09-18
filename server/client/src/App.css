@@ -33,7 +33,7 @@
   }
 }
 @media (min-width:800px) {
-  nav#optionalstuff1 {
+  div#optionalstuff2 {
     display: none;
   }
 }
@@ -50,7 +50,7 @@ body {
 	background: linear-gradient(to right, #FDFBFB, #EBEDEE 70%);
 }
 .titleText {
-	background: linear-gradient(to right, #b118a9 0%, #5c00b3 100%);
+	background: linear-gradient(to right, #b118a9 0%, #5404a5 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font: {

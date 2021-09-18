@@ -44,9 +44,18 @@ export const Signin= () => {
     }
 
     return (
-        <div style={{height:'100wh',width:'100%'}}>
+        <div style={{height:'100%',width:'100%'}}>
+            <div id='optionalstuff2' style={{ textAlign:'center',width:'100%',justifyContent:'center'}}>
+                <h1 className='titleText'
+                     style={{fontWeight:'bold',fontSize:'3.1rem'}}>ourSpace</h1>
+                
+                <hr/>
+                <div style={{width:'100%',textAlign:'center',marginLeft:'2.4rem'}}>
+                <h6 style={{width:'18rem',textAlign:'center'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h6>     
+            </div>
+            </div>
         <div style={{display:'inline-flex',width:'100%',justifyContent:'center'}}>
-        <div id='optionalstuff' style={{marginTop:'6.5rem',marginRight:'7rem'}}>
+        <div id='optionalstuff' style={{marginTop:'7rem',marginRight:'7rem'}}>
             <h1 className='titleText'
             style={{fontWeight:'bold',fontSize:'4rem'}}>ourSpace</h1>
             <br/>
