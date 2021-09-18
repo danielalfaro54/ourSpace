@@ -48,7 +48,6 @@ export const Signin= () => {
             <div id='optionalstuff2' style={{ textAlign:'center',width:'100%',justifyContent:'center'}}>
                 <h1 className='titleText'
                      style={{fontWeight:'bold',fontSize:'3.1rem'}}>ourSpace</h1>
-                
                 <hr/>
                 <div style={{width:'100%',textAlign:'center',marginLeft:'2.4rem'}}>
                 <h6 style={{width:'18rem',textAlign:'center'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h6>     
