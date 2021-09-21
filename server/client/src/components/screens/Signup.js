@@ -74,6 +74,22 @@ export const Signup= () => {
     }
     
     return (
+        <div style={{height:'100%',width:'100%'}}>
+            <div id='optionalstuff2' style={{ textAlign:'center',width:'100%',justifyContent:'center'}}>
+                <h1 className='titleText'
+                     style={{fontWeight:'bold',fontSize:'3.1rem'}}>ourSpace</h1>
+                <hr/>
+                <div style={{width:'100%',textAlign:'center',marginLeft:'2.4rem'}}>
+                <h6 style={{width:'18rem',textAlign:'center'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h6>     
+            </div>
+            </div>
+        <div style={{display:'inline-flex',width:'100%',justifyContent:'center'}}>
+        <div id='optionalstuff' style={{marginTop:'7rem',marginRight:'7rem'}}>
+            <h1 className='titleText'
+            style={{fontWeight:'bold',fontSize:'4rem'}}>ourSpace</h1>
+            <br/>
+            <h5 style={{width:'22rem'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h5>     
+        </div>
         <div className='mycard'>
         <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem', marginTop:'2%'}}>
            <h3>Registrarse</h3>
@@ -132,6 +148,8 @@ export const Signup= () => {
          <h6>¿Ya tienes una cuenta?<Link to='/signin'> Inicia sesión.
         </Link></h6>
       </div>
+        </div>
+        </div>
         </div>
     )
 }
