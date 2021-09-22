@@ -47,10 +47,10 @@ export const Signin= () => {
         <div style={{height:'100%',width:'100%'}}>
             <div id='optionalstuff2' style={{ textAlign:'center',width:'100%',justifyContent:'center'}}>
                 <h1 className='titleText'
-                     style={{fontWeight:'bold',fontSize:'3.1rem'}}>ourSpace</h1>
+                     style={{fontWeight:'bold',fontSize:'3.4rem'}}>ourSpace</h1>
                 <hr/>
-                <div style={{width:'100%',textAlign:'center',marginLeft:'2.4rem'}}>
-                <h6 style={{width:'18rem',textAlign:'center'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h6>     
+                <div style={{width:'100%',textAlign:'center',marginLeft:'2.1rem'}}>
+                <h6 style={{width:'19rem',textAlign:'center',fontSize:'15px'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h6>     
             </div>
             </div>
         <div style={{display:'inline-flex',width:'100%',justifyContent:'center'}}>
@@ -62,7 +62,7 @@ export const Signin= () => {
         </div>
         <div className='mycard'>
         <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
-           <h3>Iniciar sesión</h3>
+           <h4>Iniciar sesión</h4>
            <div>
            <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
            maxLength="29"
@@ -89,7 +89,7 @@ export const Signin= () => {
            
         <hr style={{width:'100%', marginTop:'22px', marginBottom:'22px'}}/>
            
-        <h6 style={{fontSize:'13.5px'}}>¿Primera vez aquí?<Link to='/signup'> Regístrate.
+        <h6 style={{fontSize:'13.5px'}}>¿No tienes una cuenta?<Link to='/signup'> Regístrate.
         </Link></h6>
       </div>
         </div>
