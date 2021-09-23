@@ -90,7 +90,7 @@ export const Signup= () => {
             <br/>
             <h5 style={{width:'22rem'}}>Regístrate para comenzar a crear, descubrir y compartir con la comunidad</h5>     
         </div>
-        <div className='mycard'>
+        <div className='mycard' id='signUpcard'>
         <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
            <h4>Registrarse</h4>
            <div>
@@ -150,12 +150,12 @@ export const Signup= () => {
       </div>
         </div>
         </div>
-        <div className="footer">
-        <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1631672014/logo_zgxqou.png' style={{ height:'20px'}}/>
+        <div className="footer" id='footer'>
+        <img id='footerimg' src='https://res.cloudinary.com/danielalfa98/image/upload/v1631672014/logo_zgxqou.png' style={{ height:'20px'}}/>
         <div id='footername'>
         <p style={{fontWeight:'bold',marginLeft:'7px',fontSize:'13px'}}>ourSpace</p>
         </div>
-        <p style={{width:'90%',color:'grey',fontSize:'13px'}}>© 2021 ourSpace |  <i class="bi bi-envelope" style={{marginInline:'3px'}}></i>  our.spacem9@gmail.com </p>
+        <p style={{width:'99%',color:'grey',fontSize:'13px'}}>© 2021 ourSpace |  <i class="bi bi-envelope" style={{marginInline:'3px'}}></i>  our.spacem9@gmail.com </p>
     </div>
         </div>
     )
