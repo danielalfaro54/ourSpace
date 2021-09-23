@@ -45,12 +45,12 @@ export const Signin= () => {
 
     return (
         <div style={{height:'100%',width:'100%',paddingTop:'7.4rem'}}>
-            <div id='optionalstuff2' style={{ textAlign:'center',width:'100%',justifyContent:'center',marginTop:'-4rem'}}>
+            <div id='optionalstuff2' style={{ textAlign:'center',width:'100%',justifyContent:'center',marginTop:'-5rem'}}>
                 <h1 className='titleText'
                      style={{fontWeight:'bold',fontSize:'3.4rem'}}>ourSpace</h1>
-                <hr/>
-                <div style={{width:'100%',textAlign:'center',marginLeft:'2.1rem'}}>
-                <h6 style={{width:'19rem',textAlign:'center',fontSize:'15px'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h6>     
+                <hr style={{width:'79%'}}/>
+                <div style={{width:'100vw',textAlign:'center',paddingInline:'5rem'}}>
+                <h6 style={{width:'100%',textAlign:'center',fontSize:'15px',justifyContent:'center'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h6>     
             </div>
             </div>
         <div style={{display:'inline-flex',width:'100%',justifyContent:'center'}}>
@@ -101,7 +101,7 @@ export const Signin= () => {
          <p style={{fontWeight:'bold',marginLeft:'7px',fontSize:'13px'}}>ourSpace</p>
          </div>
          
-         <p style={{width:'90%',color:'grey',fontSize:'13px'}}>© 2021 ourSpace |  <i class="bi bi-envelope" style={{marginInline:'3px'}}></i>  ourspacemail9@gmail.com </p>
+         <p style={{width:'90%',color:'grey',fontSize:'13px'}}>© 2021 ourSpace |  <i class="bi bi-envelope" style={{marginInline:'3px'}}></i>  our.spacem9@gmail.com </p>
      </div>
      </div>
     )
