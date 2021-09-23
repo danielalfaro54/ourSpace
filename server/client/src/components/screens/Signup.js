@@ -74,7 +74,7 @@ export const Signup= () => {
     }
     
     return (
-        <div style={{height:'100%',width:'100%'}}>
+        <div style={{height:'100%',width:'100%', paddingTop:'2.1rem'}}>
         <div id='optionalstuff2' style={{ textAlign:'center',width:'100%',justifyContent:'center'}}>
             <h1 className='titleText'
                  style={{fontWeight:'bold',fontSize:'3.3rem'}}>ourSpace</h1>
@@ -91,7 +91,7 @@ export const Signup= () => {
             <h5 style={{width:'22rem'}}>Regístrate para comenzar a crear, descubrir y compartir con la comunidad</h5>     
         </div>
         <div className='mycard'>
-        <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem', marginTop:'2%'}}>
+        <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
            <h4>Registrarse</h4>
            <div>
            <MDBInput label="Nombre completo" outline style={{backgroundColor: 'white'}}
@@ -155,7 +155,6 @@ export const Signup= () => {
         <div id='footername'>
         <p style={{fontWeight:'bold',marginLeft:'7px',fontSize:'13px'}}>ourSpace</p>
         </div>
-        
         <p style={{width:'90%',color:'grey',fontSize:'13px'}}>© 2021 ourSpace |  <i class="bi bi-envelope" style={{marginInline:'3px'}}></i>  ourspacemail9@gmail.com </p>
     </div>
         </div>

@@ -44,7 +44,7 @@ export const Signin= () => {
     }
 
     return (
-        <div style={{height:'100%',width:'100%',marginTop:'7rem'}}>
+        <div style={{height:'100%',width:'100%',paddingTop:'7.4rem'}}>
             <div id='optionalstuff2' style={{ textAlign:'center',width:'100%',justifyContent:'center',marginTop:'-4rem'}}>
                 <h1 className='titleText'
                      style={{fontWeight:'bold',fontSize:'3.4rem'}}>ourSpace</h1>
@@ -61,7 +61,7 @@ export const Signin= () => {
             <h5 style={{width:'22rem'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h5>     
         </div>
         <div className='mycard'>
-        <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem',marginBottom:'-15rem'}}>
+        <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
            <h4>Iniciar sesión</h4>
            <div>
            <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
@@ -93,16 +93,16 @@ export const Signin= () => {
         </Link></h6>
     </div>
       </div>
+   
         </div>
-    <div className="footer">
-        <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1631672014/logo_zgxqou.png' style={{ height:'20px'}}/>
-        <div id='footername'>
-        <p style={{fontWeight:'bold',marginLeft:'7px',fontSize:'13px'}}>ourSpace</p>
-        </div>
-        
-        <p style={{width:'90%',color:'grey',fontSize:'13px'}}>© 2021 ourSpace |  <i class="bi bi-envelope" style={{marginInline:'3px'}}></i>  ourspacemail9@gmail.com </p>
-    </div>
-        
-        </div>
+         <div className="footer">
+         <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1631672014/logo_zgxqou.png' style={{ height:'20px'}}/>
+         <div id='footername'>
+         <p style={{fontWeight:'bold',marginLeft:'7px',fontSize:'13px'}}>ourSpace</p>
+         </div>
+         
+         <p style={{width:'90%',color:'grey',fontSize:'13px'}}>© 2021 ourSpace |  <i class="bi bi-envelope" style={{marginInline:'3px'}}></i>  ourspacemail9@gmail.com </p>
+     </div>
+     </div>
     )
 }
