@@ -150,6 +150,14 @@ export const Signup= () => {
       </div>
         </div>
         </div>
+        <div className="footer">
+        <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1631672014/logo_zgxqou.png' style={{ height:'20px'}}/>
+        <div id='footername'>
+        <p style={{fontWeight:'bold',marginLeft:'7px',fontSize:'13px'}}>ourSpace</p>
+        </div>
+        
+        <p style={{width:'90%',color:'grey',fontSize:'13px'}}>© 2021 ourSpace |  <i class="bi bi-envelope" style={{marginInline:'3px'}}></i>  ourspacemail9@gmail.com </p>
+    </div>
         </div>
     )
 }
