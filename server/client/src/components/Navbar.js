@@ -29,7 +29,7 @@ const Navbar= ()=>{
       return [
         <>
           <li><Link to="/create" className='links' 
-          style={{fontSize:'13.5px',marginTop:'0.4px', marginRight:'10px', display:'inline-flex'}}>
+          style={{fontSize:'13.5px',marginTop:'0.4px', marginRight:'15px', display:'inline-flex'}}>
           <i class="bi bi-plus" style={{fontSize:'17px'}}></i>Publicar</Link></li>
             <Dropdown
               trigger={trigger}
@@ -61,8 +61,8 @@ const Navbar= ()=>{
   <nav className='navbarz'>
 
   <div className="nav-wrapper #212121 grey darken-4">
-    <Link to={state?"/":"/signin"} className="brand-logo left b" style={{fontSize:'20px', color:'white'}}>
-    <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1628646860/e8e1153d4d014fdb9000a0a4e479b497_qtgxig_c0ht6b.png' style={{ height:'27px', paddingRight:'11px'}} />
+    <Link to={state?"/":"/signin"} className="brand-logo left b" style={{fontSize:'17px', color:'white'}}>
+    <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1628646860/e8e1153d4d014fdb9000a0a4e479b497_qtgxig_c0ht6b.png' style={{ height:'25px', paddingRight:'11px'}} />
       ourSpace
     </Link>
     <ul id="nav-mobile" className="right">

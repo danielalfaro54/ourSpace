@@ -50,7 +50,7 @@ export const Profile= () => {
                     </div>
                 </div>
             </div>
-            <hr style={{width:'70%', marginTop:'20px', marginBottom:'20px'}}/>
+            <hr style={{width:'70%', marginTop:'20px', marginBottom:'30px'}}/>
         <div className ="postslist" style = {{width:'71%', display: "flex", marginInline:'14.5%',
                 justifyContent: "space-around", flexWrap:'wrap'}}>
             {

@@ -59,9 +59,9 @@ export const Createpost = () => {
     }
 
     return (
-        <div className='mycard'>
-        <div className="card auth-card" style={{width:'24rem', marginTop:'4.5%'}}>
-           <h4  style={{fontWeight: 'bold'}}>Crear publicación</h4>
+        <div className='mycard' id='createPost1'>
+        <div className="card auth-card" id='createPost'style={{width:'26rem', marginTop:'4.5%'}}>
+           <h4 style={{fontWeight: 'bold',fontSize:'20px',marginBottom:'.5rem'}}>Crear publicación</h4>
            <div>
            <MDBInput label="Título" outline style={{backgroundColor: 'white',fontSize:'15px'}}
            maxLength="33"
@@ -71,7 +71,7 @@ export const Createpost = () => {
                     setTitle(e.target.value)
                 }}
            />
-           <MDBInput type="textarea" label="Descripción" outline style={{backgroundColor: 'white',fontSize:'15px'}}
+           <MDBInput type="textarea" label="Descripción" outline style={{backgroundColor: 'white',fontSize:'15px',height:'6rem'}}
            maxLength="400"
            value={body}
            onChange = {(e)=>{
