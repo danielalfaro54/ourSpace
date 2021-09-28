@@ -57,7 +57,7 @@ export const Signup= () => {
         if(data.error){
             M.toast({html: 'Completa todos los campos obligatorios',classes:'#0f0f0f black darken-3'})
         }else{
-            M.toast({html: 'Registro exitoso!. Inicia sesión',classes:'#0f0f0f black darken-3'})
+            M.toast({html: 'Bienvenido/a! Inicia sesión',classes:'#0f0f0f black darken-3'})
             history.push("/signin")
         }
     }).catch(err=>{
@@ -102,9 +102,10 @@ export const Signup= () => {
                 setname(e.target.value)
            }}
            />
-           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
+           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white',textTransform: 'lowercase'}}
            maxLength="29"
            type='text'
+           
            value= {email}
            onChange = {(e)=>{
                 setemail(e.target.value)

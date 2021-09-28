@@ -64,7 +64,7 @@ export const Signin= () => {
         <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
            <h4>Iniciar sesión</h4>
            <div>
-           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
+           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white',textTransform: 'lowercase'}}
            maxLength="29"
            type='text'
            value= {email}

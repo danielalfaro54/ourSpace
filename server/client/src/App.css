@@ -63,12 +63,10 @@
   }
 }
 
-
-
 ::selection { background-color: #C3CFE2; }
 
 .titleText {
-	background: linear-gradient(to right, #b60189 0%, #6a33c7 100%);
+	background: linear-gradient(to right, #a7007d 0%, #6a33c7 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font: {
