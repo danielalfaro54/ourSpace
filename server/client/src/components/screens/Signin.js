@@ -64,7 +64,7 @@ export const Signin= () => {
         <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
            <h4>Iniciar sesión</h4>
            <div>
-           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white',textTransform: 'lowercase'}}
+           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
            maxLength="29"
            type='text'
            value= {email}
@@ -96,7 +96,7 @@ export const Signin= () => {
    
         </div>
          <div className="footer">
-         <img id='footerimg' src='https://res.cloudinary.com/danielalfa98/image/upload/v1631672014/logo_zgxqou.png' style={{ height:'20px'}}/>
+         <img id='footerimg' src='https://res.cloudinary.com/ourspacepics/image/upload/v1631672014/logo_zgxqou.png' style={{ height:'20px'}}/>
          <div id='footername'>
          <p style={{fontWeight:'bold',marginLeft:'7px',fontSize:'13px'}}>ourSpace</p>
          </div>

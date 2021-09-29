@@ -22,9 +22,9 @@ export const Signup= () => {
         const data = new FormData()
         data.append("file",image)
         data.append("upload_preset","SocialNetwork9")
-        data.append("cloud_name","danielalfa98")
+        data.append("cloud_name","ourspacepics")
         
-        fetch("https://api.cloudinary.com/v1_1/danielalfa98/image/upload",{
+        fetch("https://api.cloudinary.com/v1_1/ourspacepics/image/upload",{
             method:"post",
             body:data
         }).then(res=>res.json())
@@ -102,10 +102,9 @@ export const Signup= () => {
                 setname(e.target.value)
            }}
            />
-           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white',textTransform: 'lowercase'}}
+           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
            maxLength="29"
            type='text'
-           
            value= {email}
            onChange = {(e)=>{
                 setemail(e.target.value)
@@ -152,7 +151,7 @@ export const Signup= () => {
         </div>
         </div>
         <div className="footer" id='footer'>
-        <img id='footerimg' src='https://res.cloudinary.com/danielalfa98/image/upload/v1631672014/logo_zgxqou.png' style={{ height:'20px'}}/>
+        <img id='footerimg' src='https://res.cloudinary.com/ourspacepics/image/upload/v1631672014/logo_zgxqou.png' style={{ height:'20px'}}/>
         <div id='footername'>
         <p style={{fontWeight:'bold',marginLeft:'7px',fontSize:'13px'}}>ourSpace</p>
         </div>

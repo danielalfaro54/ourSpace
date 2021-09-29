@@ -62,7 +62,7 @@ const Navbar= ()=>{
 
   <div className="nav-wrapper #212121 grey darken-4">
     <Link to={state?"/":"/signin"} className="brand-logo left b" style={{fontSize:'17px', color:'white'}}>
-    <img src='https://res.cloudinary.com/danielalfa98/image/upload/v1628646860/e8e1153d4d014fdb9000a0a4e479b497_qtgxig_c0ht6b.png' style={{ height:'25px', paddingRight:'11px'}} />
+    <img src='https://res.cloudinary.com/ourspacepics/image/upload/v1628646860/e8e1153d4d014fdb9000a0a4e479b497_qtgxig_c0ht6b.png' style={{ height:'25px', paddingRight:'11px'}} />
       ourSpace
     </Link>
     <ul id="nav-mobile" className="right">

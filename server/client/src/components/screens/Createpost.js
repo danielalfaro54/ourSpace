@@ -43,9 +43,9 @@ export const Createpost = () => {
         const data = new FormData()
         data.append("file",image)
         data.append("upload_preset","SocialNetwork9")
-        data.append("cloud_name","danielalfa98")
+        data.append("cloud_name","ourspacepics")
         
-        fetch("https://api.cloudinary.com/v1_1/danielalfa98/image/upload",{
+        fetch("https://api.cloudinary.com/v1_1/ourspacepics/image/upload",{
             method:"post",
             body:data
         }).then(res=>res.json())
