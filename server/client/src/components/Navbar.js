@@ -37,13 +37,6 @@ const Navbar= ()=>{
               pointing="top right"
               icon={null}
             />
-          {/* <li><Link className='links' 
-           onClick={()=>{
-            localStorage.clear()
-            dispatch({type:"CLEAR"})
-            history.push("/signin")}}
-            style={{fontSize:'14px', marginTop:'1.5px'}}>Cerrar sesión</Link>
-          </li> */}
         </>
       ]
     }else {

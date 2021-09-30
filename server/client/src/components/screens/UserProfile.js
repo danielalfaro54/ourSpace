@@ -24,10 +24,8 @@ export const UserProfile= () => {
                 }
             }).then(res=>res.json())
             .then(result=>{
-                //console.log(result)
                 setUserProfile(result.user.name)
                 setUserEmail(result.user.email)
-                //console.log(userProfile)
                 setProfile(result.posts.length)
                 setposts(result.posts)
                 setProf(result)

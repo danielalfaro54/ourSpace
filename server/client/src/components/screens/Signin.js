@@ -35,7 +35,7 @@ export const Signin= () => {
             localStorage.setItem('jwt',data.token)
             localStorage.setItem('user',JSON.stringify(data.user))
             dispatch({type:"USER",payload:data.user})
-            M.toast({html: 'Ingresó correctamente',classes:'#0f0f0f black darken-3'})
+            M.toast({html: 'Bienvenido/a',classes:'#0f0f0f black darken-3'})
             history.push("/")
         }
     }).catch(err=>{
