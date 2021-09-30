@@ -203,7 +203,7 @@ export const Home = () => {
                                     likePost(item._id)
                                 }}></i>
                             }
-                            <h6 style={{marginTop:'0.25rem', marginLeft:'0.1rem',color:'grey',fontSize:'13px',fontWeight:'bold'}}>{item.likes.length}</h6></h6>
+                            <h6 style={{marginTop:'0.28rem', marginLeft:'0.1rem',color:'grey',fontSize:'13px',fontWeight:'bold'}}>{item.likes.length}</h6></h6>
                             <h6 style={{fontSize: '13.5px'}}>{item.body}</h6>
                                 {
                                     item.comments.map(record=>{
