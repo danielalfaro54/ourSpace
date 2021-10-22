@@ -6,7 +6,7 @@
   
   This Social Media Web Application was entirely built using MERN Stack development.
 
-
+<br>
 
 
 WEBSITE SCREENCAPS:
