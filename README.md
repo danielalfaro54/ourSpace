@@ -1,4 +1,4 @@
-  # ourSpace![logo_zgxqou](https://user-images.githubusercontent.com/45349730/138401474-63ecda5a-98e6-46b2-b7df-1f04dbd3f75c.png)
+  # ourSpace![logo_zgxqou (1)](https://user-images.githubusercontent.com/45349730/138401600-0d4be6ca-b005-49fb-b157-dc6ce252ba40.png)
 
   
   MERN Stack Social Media Website
