@@ -1,9 +1,10 @@
   #  ![logo_zgxqou (1) (1) (1)](https://user-images.githubusercontent.com/45349730/138401881-c90caf43-c698-4f97-b1ba-e56b8d53e83f.png)  ourSpace
 
   
-  MERN Stack Social Media Website
+  OurSpace is a social network website where you can upload and share photos with a community of users. It includes features such as beaing able to follow other users, 
+  like photos and even comment on posts.
   
-  ourSpace is
+  This Social Media Web Application was entirely built using MERN Stack development.
 
 
 WEBSITE SCREENCAPS:
@@ -16,7 +17,8 @@ WEBSITE SCREENCAPS:
 
 ![Screenshot 2021-10-21 225943 (1)](https://user-images.githubusercontent.com/45349730/138402553-d60b4498-ccb1-4d98-9614-5dc017dd61eb.png)
 
-![Screenshot 2021-10-21 225508 (1)](https://user-images.githubusercontent.com/45349730/138402639-dabdc7b9-3e93-45c2-a3de-22902c22e012.png)
+![Screenshot 2021-10-21 230130 (2)](https://user-images.githubusercontent.com/45349730/138402943-c7e0a1f5-4cb9-4907-b051-af0cf0439eac.png)
+
 
 
 
