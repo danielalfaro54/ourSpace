@@ -7,6 +7,8 @@
   This Social Media Web Application was entirely built using MERN Stack development.
 
 
+
+
 WEBSITE SCREENCAPS:
 
 ![Screenshot 2021-10-21 225142 (1)](https://user-images.githubusercontent.com/45349730/138402381-a2130381-9fc5-4f4f-aa60-3ab924e4d675.png)
