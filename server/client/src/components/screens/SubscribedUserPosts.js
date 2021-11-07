@@ -37,7 +37,6 @@ export const SubscribedUserPosts = () => {
         setData(newData)
     })
 }
-
     const likePost = (id)=>{
         fetch('/like',{
             method: "put",
@@ -101,13 +100,13 @@ export const SubscribedUserPosts = () => {
                   <Button
                     onClick={()=>{
                         history.push("/")}}>
-                        Recientes
+                        Home
                   </Button>
                   <Button basic color='black'
                     onClick={()=>{
                          history.push("/followingposts")}}>
                         <Link to="/" className='links2' style={{color:'#333333',fontWeight:'bold'}}>
-                            Siguiendo
+                            Following
                         </Link>
                   </Button>     
             </Button.Group>
@@ -129,10 +128,9 @@ export const SubscribedUserPosts = () => {
                     {item.postedby.name}
                         </Link>
                     } 
-                          
                     {item.postedby._id===(state._id)
                     ?
-                    <i title="Eliminar" class="bi bi-x" style={{float: 'right', fontSize: '1.6rem',marginTop:'-0.1rem'}}
+                    <i title="Delete Post" class="bi bi-x" style={{float: 'right', fontSize: '1.6rem',marginTop:'-0.1rem'}}
                         onClick={()=>{
                             deletePost(item._id)
                     }}></i>
@@ -140,7 +138,6 @@ export const SubscribedUserPosts = () => {
                     <i></i>
                     }    
                     </h5>
-                    
                     <div className="card-image">
                     <img src={item.photo} style={{width: '100%'}} />
                     </div>
@@ -173,7 +170,7 @@ export const SubscribedUserPosts = () => {
                                     e.preventDefault()
                                     makeComment(e.target[0].value,item._id)
                                 }}>
-                                    <input type= "text" placeholder ="Escribe un comentario"
+                                    <input type= "text" placeholder ="Write a comment..."
                                         style={{marginTop:'0.4rem', marginBottom:'-0.3rem',fontSize:'13.5px',fontWeight:'lighter'}}/>
                                 </form> 
                     </div>

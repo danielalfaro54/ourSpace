@@ -37,7 +37,7 @@ export const Signup= () => {
 
     const uploadFields = () => {
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            M.toast({html: 'Correo electrónico inválido',classes:'#0f0f0f black darken-3'})
+            M.toast({html: 'Invalid email address',classes:'#0f0f0f black darken-3'})
             return
         }
         fetch("/signup",{
@@ -55,9 +55,9 @@ export const Signup= () => {
         )
     }).then(res=>res.json()).then(data=>{
         if(data.error){
-            M.toast({html: 'Completa todos los campos obligatorios',classes:'#0f0f0f black darken-3'})
+            M.toast({html: 'Please complete all required fields',classes:'#0f0f0f black darken-3'})
         }else{
-            M.toast({html: 'Bienvenido/a! Inicia sesión',classes:'#0f0f0f black darken-3'})
+            M.toast({html: 'Account created successfully!',classes:'#0f0f0f black darken-3'})
             history.push("/signin")
         }
     }).catch(err=>{
@@ -80,7 +80,7 @@ export const Signup= () => {
                  style={{fontWeight:'bold',fontSize:'3.3rem'}}>ourSpace</h1>
             <hr style={{width:'75%'}}/>
             <div style={{width:'100vw',textAlign:'center',paddingInline:'5rem'}}>
-            <h6 style={{width:'100%',textAlign:'center',fontSize:'15px'}}>Regístrate para comenzar a crear, descubrir y compartir con la comunidad</h6>     
+            <h6 style={{width:'100%',textAlign:'center',fontSize:'15px'}}>Sign up to create, discover and share with the community</h6> 
         </div>
         </div>
         <div style={{display:'inline-flex',width:'100%',justifyContent:'center'}}>
@@ -88,13 +88,13 @@ export const Signup= () => {
             <h1 className='titleText'
             style={{fontWeight:'bold',fontSize:'4rem'}}>ourSpace</h1>
             <br/>
-            <h5 style={{width:'22rem'}}>Regístrate para comenzar a crear, descubrir y compartir con la comunidad</h5>     
-        </div>
+            <h5 style={{width:'22rem'}}>Sign up to create, discover and share with the community</h5>     
+        </div>                          
         <div className='mycard' id='signUpcard'>
         <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
-           <h4>Registrarse</h4>
+           <h4>Sign up</h4>
            <div>
-           <MDBInput label="Nombre completo" outline style={{backgroundColor: 'white'}}
+           <MDBInput label="Full name" outline style={{backgroundColor: 'white'}}
            maxLength="29"
            type='text'
            value= {name}
@@ -102,7 +102,7 @@ export const Signup= () => {
                 setname(e.target.value)
            }}
            />
-           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
+           <MDBInput label="Email" outline style={{backgroundColor: 'white'}}
            maxLength="29"
            type='text'
            value= {email}
@@ -110,7 +110,7 @@ export const Signup= () => {
                 setemail(e.target.value)
            }}
            />
-           <MDBInput label="Contraseña" outline style={{backgroundColor: 'white'}}
+           <MDBInput label="Password" outline style={{backgroundColor: 'white'}}
            maxLength="46"
            type='password'
            value= {password}
@@ -120,9 +120,9 @@ export const Signup= () => {
            />
            </div>
     <div class="file-field input-field" style={{display: 'inline-flex', marginTop:'1px', marginBottom:'1px'}}>
-    <Button basic color='violet' style={{height:'47px', width:'100px'}}>
+    <Button basic color='violet' style={{height:'47px', width:'108px'}}>
     <i class="bi bi-image" style={{marginRight:'5px', marginLeft:'-9px'}}></i>
-       Foto de perfil
+       Profile picture
             <input type="file"
                 onChange = {(e)=>{
                     setImage(e.target.files[0])
@@ -131,7 +131,7 @@ export const Signup= () => {
              </Button>
             
             <div className="file-path-wrapper" >
-                <input className="file-path validate" type="text" placeholder='*Opcional'/>
+                <input className="file-path validate" type="text" placeholder='*Optional'/>
             </div>
             </div>
             <div>
@@ -141,11 +141,11 @@ export const Signup= () => {
             onClick={()=>{
                 PostData()
             }}
-                >Crear cuenta
+                >Create account
             </Button>
             </div>
          <hr style={{width:'100%', marginTop:'22px', marginBottom:'22px'}}/>
-         <h6>¿Ya tienes una cuenta?<Link to='/signin'> Inicia sesión.
+         <h6>Already have an account?<Link to='/signin'> Log in
         </Link></h6>
       </div>
         </div>

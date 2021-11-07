@@ -55,7 +55,6 @@ export const UserProfile= () => {
                    return { user:{
                         ...prevState.user,
                         followers:[...prevState.user.followers,data._id]
-
                     }
                 }
                 })
@@ -80,7 +79,6 @@ export const UserProfile= () => {
                 localStorage.setItem("user",JSON.stringify(data))
                 setProf((prevState)=>{
                     const newFollower = prevState.user.followers.filter(item=>item!==data._id)
-
                    return { user:{
                         ...prevState,
                         users:{
@@ -115,16 +113,16 @@ export const UserProfile= () => {
             <h6 style={{fontSize:'20px', fontWeight:'400',marginRight:'1rem',marginTop:'0.5rem'}}>{userProfile}</h6>
         {!JSON.parse(localStorage.getItem("user")).following.includes(userid) && showfollow
               ?
-              <Button color='violet' type="submit" name="action" style={{height:'2.35rem', width:'5.1rem',fontWeight:'bold'}}
+              <Button color='violet' type="submit" name="action" style={{height:'2.34rem', width:'4.8rem',fontWeight:'bold'}}
                 onClick= {()=>followUser()}>
-                    <i style={{marginLeft:'-0.4rem'}}></i>
-                Seguir
+                    <i style={{marginLeft:'-0.55rem'}}></i>
+                Follow
               </Button>    
               :
-              <Button basic color='violet' type="submit" name="action" style={{height:'2.3rem', width:'8rem'}}
+              <Button basic color='violet' type="submit" name="action" style={{height:'2.25rem', width:'6.1rem'}}
                 onClick= {()=>unfollowUser()}>
-                    <i class="bi bi-check2" style={{marginLeft:'-0.5rem'}}> </i>
-                Siguiendo
+                    <i style={{marginLeft:'-0.6rem'}}></i>
+                    Following
               </Button> 
               }
               </div>
@@ -132,9 +130,9 @@ export const UserProfile= () => {
                         display: "flex",
                         justifyContent: "flex-start",
                         width: "100%",
-                        marginTop:'0.9rem'
+                        marginTop:'0.4rem'
                     }}>
-                        <h6 style={{fontSize:'14px'}}>{Profile} publicaciones</h6>
+                        <h6 style={{fontSize:'14px', color:'grey'}}>{Profile} Posts</h6>
                     </div>
                     <div style={{
                         display: "flex",
@@ -142,9 +140,9 @@ export const UserProfile= () => {
                         width: "100%",
                         marginTop:'1.3rem'
                     }}>
-                        <h6 style={{marginRight:'1rem'}}>
-                            {Prof.user ===undefined?" ":Prof.user.following===undefined?" ":Prof.user.following.length} siguiendo</h6>
-                        <h6>{Prof.user ===undefined?" ":Prof.user.followers===undefined?" ":Prof.user.followers.length} seguidores</h6>
+                        <h6 style={{marginRight:'1rem',fontSize:'14px'}}>
+                            {Prof.user ===undefined?" ":Prof.user.following===undefined?" ":Prof.user.following.length} Following</h6>
+                        <h6 style={{fontSize:'14px'}}>{Prof.user===undefined?" ":Prof.user.followers===undefined?" ":Prof.user.followers.length} Followers</h6>
                     </div>
                 </div>
             </div>

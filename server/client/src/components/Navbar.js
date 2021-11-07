@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { UserContext } from '../App'
-import { Dropdown, Image } from 'semantic-ui-react'
+import { Dropdown} from 'semantic-ui-react'
 
 const Navbar= ()=>{
   const {state,dispatch} = useContext(UserContext)
@@ -19,8 +19,8 @@ const Navbar= ()=>{
       
       const options = [
         { },
-        { key: 'user',text: 'Mi perfil', href:'/profile'},
-        { key: 'sign-out', text: 'Cerrar sesión', onClick:()=>{
+        { key: 'user',text: 'Profile', href:'/profile'},
+        { key: 'sign-out', text: 'Log out', onClick:()=>{
           localStorage.clear()
           dispatch({type:"CLEAR"})
           history.push("/signin")}},
@@ -29,8 +29,9 @@ const Navbar= ()=>{
       return [
         <>
           <li><Link to="/create" className='links' 
-          style={{fontSize:'13.5px',marginTop:'0.4px', marginRight:'15px', display:'inline-flex'}}>
-          <i class="bi bi-plus" style={{fontSize:'17px'}}></i>Publicar</Link></li>
+          style={{fontSize:'14px',marginTop:'0.4px', marginRight:'15px', display:'inline-flex',fontWeight:'bold'}}>
+          <i class="bi bi-plus" style={{fontSize:'15px'}}></i>Post</Link></li>
+
             <Dropdown
               trigger={trigger}
               options={options}
@@ -41,8 +42,8 @@ const Navbar= ()=>{
       ]
     }else {
       return [  <>
-          <li><Link to="/signin" className='links'>Iniciar sesión</Link></li>
-          <li><Link to="/signup" className='links'>Registrarse</Link></li>
+          <li><Link to="/signin" className='links'>Log In</Link></li>
+          <li><Link to="/signup" className='links'>Sign Up</Link></li>
         </>
       ]
     }

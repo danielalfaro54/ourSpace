@@ -13,7 +13,7 @@ export const Signin= () => {
     const PostData = ()=>{
         //verifiyng email format
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
-            M.toast({html: 'Correo electrónico inválido',classes:'#0f0f0f black darken-3'})
+            M.toast({html: 'Invalid email address',classes:'#0f0f0f black darken-3'})
             return
         }
         fetch("/signin",{
@@ -30,12 +30,12 @@ export const Signin= () => {
     }).then(res=>res.json())
     .then(data=>{
         if(data.error){
-            M.toast({html: 'La contraseña y correo no coinciden',classes:'#0f0f0f black darken-3'})
+            M.toast({html: 'Your email and password do not match. Please try again.',classes:'#0f0f0f black darken-3'})
         }else{
             localStorage.setItem('jwt',data.token)
             localStorage.setItem('user',JSON.stringify(data.user))
             dispatch({type:"USER",payload:data.user})
-            M.toast({html: 'Bienvenido/a',classes:'#0f0f0f black darken-3'})
+            M.toast({html: 'Welcome!',classes:'#0f0f0f black darken-3'})
             history.push("/")
         }
     }).catch(err=>{
@@ -50,7 +50,7 @@ export const Signin= () => {
                      style={{fontWeight:'bold',fontSize:'3.4rem'}}>ourSpace</h1>
                 <hr style={{width:'75%'}}/>
                 <div style={{width:'100vw',textAlign:'center',paddingInline:'5rem'}}>
-                <h6 style={{width:'100%',textAlign:'center',fontSize:'15px',justifyContent:'center'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h6>     
+                <h6 style={{width:'100%',textAlign:'center',fontSize:'15px',justifyContent:'center'}}>A place to share your most important moments and discover a community of creators just like you</h6>     
             </div>
             </div>
         <div style={{display:'inline-flex',width:'100%',justifyContent:'center'}}>
@@ -58,13 +58,13 @@ export const Signin= () => {
             <h1 className='titleText'
             style={{fontWeight:'bold',fontSize:'4rem'}}>ourSpace</h1>
             <br/>
-            <h5 style={{width:'22rem'}}>Comparte tus momentos más importantes y descubre una comunidad de creadores como tú</h5>     
+            <h5 style={{width:'22rem'}}>A place to share your most important moments and discover a community of creators just like you</h5>     
         </div>
         <div className='mycard'>
         <div className="card auth-card" style={{backgroundColor: 'white', width:'23rem'}}>
-           <h4>Iniciar sesión</h4>
+           <h4>Sign in to your account</h4>
            <div>
-           <MDBInput label="Correo electrónico" outline style={{backgroundColor: 'white'}}
+           <MDBInput label="Email" outline style={{backgroundColor: 'white'}}
            maxLength="29"
            type='text'
            value= {email}
@@ -72,7 +72,7 @@ export const Signin= () => {
                 setemail(e.target.value)
            }}
            />
-           <MDBInput label="Contraseña" outline style={{backgroundColor: 'white'}}
+           <MDBInput label="Password" outline style={{backgroundColor: 'white'}}
            maxLength="45"
            type='password'
            value= {password}
@@ -84,12 +84,11 @@ export const Signin= () => {
         <Button color='violet' type="submit" name="action" style = {{width:'100%'}}
          onClick= {()=>
              PostData()}
-                >Ingresar
+                >Log in
         </Button>
            
         <hr style={{width:'100%', marginTop:'22px', marginBottom:'22px'}}/>
-           
-        <h6 style={{fontSize:'13.5px'}}>¿No tienes una cuenta?<Link to='/signup'> Regístrate.
+        <h6 style={{fontSize:'13.5px'}}>Don't have an account?<Link to='/signup'> Create one
         </Link></h6>
     </div>
       </div>

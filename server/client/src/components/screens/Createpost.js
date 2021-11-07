@@ -28,9 +28,9 @@ export const Createpost = () => {
                 )
             }).then(res=>res.json()).then(data=>{
                 if(data.error){
-                    M.toast({html:'Completa todos los campos',classes:'#0f0f0f black darken-3'})
+                    M.toast({html:'Please fill out all required fields',classes:'#0f0f0f black darken-3'})
                 }else{
-                    M.toast({html:'La publicación fue realizada',classes:'#0f0f0f black darken-3'})
+                    M.toast({html:'Post successfully created',classes:'#0f0f0f black darken-3'})
                     history.push("/")
                 }
             }).catch(err=>{
@@ -50,7 +50,7 @@ export const Createpost = () => {
             body:data
         }).then(res=>res.json())
         .then(data=>{
-            M.toast({html:'Completa todos los campos',classes:'#0f0f0f black darken-3'})
+            M.toast({html:'Please fill out all required fields',classes:'#0f0f0f black darken-3'})
              seturl(data.url)
         }).catch(err=>{
             console.log(err);
@@ -61,9 +61,9 @@ export const Createpost = () => {
     return (
         <div className='mycard' id='createPost1'>
         <div className="card auth-card" id='createPost'style={{width:'26rem', marginTop:'4.5%'}}>
-           <h4 style={{fontWeight: 'bold',fontSize:'20px',marginBottom:'.5rem'}}>Crear publicación</h4>
+           <h4 style={{fontWeight: 'bold',fontSize:'20px',marginBottom:'.5rem'}}>Create a post</h4>
            <div>
-           <MDBInput label="Título" outline style={{backgroundColor: 'white',fontSize:'15px'}}
+           <MDBInput label="Title" outline style={{backgroundColor: 'white',fontSize:'15px'}}
            maxLength="33"
            type='text'
            value={title}
@@ -71,7 +71,7 @@ export const Createpost = () => {
                     setTitle(e.target.value)
                 }}
            />
-           <MDBInput type="textarea" label="Descripción" outline style={{backgroundColor: 'white',fontSize:'15px',height:'6rem'}}
+           <MDBInput type="textarea" label="Say something about this photo..." outline style={{backgroundColor: 'white',fontSize:'15px',height:'6rem'}}
            maxLength="400"
            value={body}
            onChange = {(e)=>{
@@ -80,9 +80,9 @@ export const Createpost = () => {
            />
            </div>
         <div class="file-field input-field" style={{display: 'inline-flex', marginTop:'1px', marginBottom:'1px'}}>
-            <Button basic color='violet' style={{height:'47px', width:'89px'}}>
+            <Button basic color='violet' style={{height:'47px', width:'99px'}}>
             <i class="bi bi-image" style={{marginRight:'5px', marginLeft:'-9px'}}></i>
-                Subir imagen
+                Add image
             <input type="file"
                 onChange = {(e)=>{  
                     setimage(e.target.files[0])
@@ -98,7 +98,7 @@ export const Createpost = () => {
             <Button color='violet' type="submit" name="action"
             style = {{width:'100%', marginBottom:'0.4rem'}}
             onClick= {()=>postDetails()}
-                >Publicar
+                >POST
             </Button>
             </div>
         </div>

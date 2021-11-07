@@ -29,8 +29,8 @@ export const Profile= () => {
                     src={state?state.pic:"loading"}
                 ></img>
                 </div>
-                <div style={{marginTop:'1.4rem',marginLeft:'6%'}}>   
-                    <h6 style={{fontSize:'19px', fontWeight:'400'}}>{state?state.name:"loading"}</h6>
+                <div style={{marginTop:'1.5rem',marginLeft:'6%'}}>   
+                    <h6 style={{fontSize:'20px', fontWeight:'400'}}>{state?state.name:"loading"}</h6>
                     <div style={{
                         display: "flex",
                         justifyContent: "flex-start",
@@ -45,8 +45,8 @@ export const Profile= () => {
                         width: "100%",
                         marginTop:'0.7rem'
                     }}>
-                        <h6>{state?state.followers.length:"loading"} seguidores</h6>
-                        <h6 style={{marginLeft: "1rem", marginRight:'1rem'}}>{state?state.following.length:"loading"} siguiendo</h6>
+                        <h6 style={{fontSize:'14px'}}>{state?state.followers.length:"loading"} Followers</h6>
+                        <h6 style={{marginLeft: "1rem", marginRight:'1rem',fontSize:'14px'}}>{state?state.following.length:"loading"} Following</h6>
                     </div>
                 </div>
             </div>

@@ -134,13 +134,13 @@ export const Home = () => {
                     onClick={()=>{
                         history.push("/")}}>
                     <Link to="/" className='links2' style={{color:'#333333',fontWeight:'bold'}}>
-                        Recientes
+                        Home
                     </Link>
                   </Button>
                   <Button
                     onClick={()=>{
                          history.push("/followingposts")}}>
-                    Siguiendo
+                    Following
                   </Button>     
             </Button.Group>
             </div>
@@ -163,18 +163,18 @@ export const Home = () => {
                           
                     {item.postedby._id===(state._id)
                     ?
-                    <i title="Eliminar" class="bi bi-x" style={{float: 'right', fontSize: '1.6rem',marginTop:'-0.1rem'}}
+                    <i title="Delete Post" class="bi bi-x" style={{float: 'right', fontSize: '1.6rem',marginTop:'-0.1rem'}}
                         onClick={()=>{
                             confirmAlert({
-                                title: 'Eliminar',
-                                message: '¿Estás seguro de que quieres borrar la publicación?',
+                                title: 'Delete',
+                                message: 'Are you sure you want to delete this post?',
                                 buttons: [
                                   {
-                                    label: 'Sí',
+                                    label: 'Yes, delete',
                                     onClick: () => deletePost(item._id)
                                   },
                                   {
-                                    label: 'No, cancelar',
+                                    label: 'Cancel',
                                     onClick: () => <i/>
                                   }
                                 ]
@@ -203,8 +203,8 @@ export const Home = () => {
                                     likePost(item._id)
                                 }}></i>
                             }
-                            <h6 style={{marginTop:'0.28rem', marginLeft:'0.1rem',color:'grey',fontSize:'13px',fontWeight:'bold'}}>{item.likes.length}</h6></h6>
-                            <h6 style={{fontSize: '13.5px'}}>{item.body}</h6>
+                            <h6 style={{marginTop:'0.34rem', marginLeft:'0.1rem',color:'grey',fontSize:'12px',fontWeight:'bold'}}>{item.likes.length}</h6></h6>
+                            <h6 style={{fontSize: '14.5px'}}>{item.body}</h6>
                                 {
                                     item.comments.map(record=>{
                                         return(
@@ -217,8 +217,8 @@ export const Home = () => {
                                     e.preventDefault()
                                     makeComment(e.target[0].value,item._id)
                                 }}>
-                                    <input type= "text" placeholder ="Escribe un comentario"
-                                        style={{marginTop:'0.4rem', marginBottom:'-0.3rem',fontSize:'13.5px',fontWeight:'lighter'}}/>
+                                    <input type= "text" placeholder ="Write a comment..."
+                                        style={{marginTop:'0.4rem', marginBottom:'-0.3rem',fontSize:'14px',fontWeight:'lighter'}}/>
                                 </form> 
                     </div>
                 </div> 
