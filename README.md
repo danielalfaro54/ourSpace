@@ -11,23 +11,24 @@
 
 WEBSITE SCREENCAPS:
 
-![Screenshot 2021-10-21 225142 (1)](https://user-images.githubusercontent.com/45349730/138402381-a2130381-9fc5-4f4f-aa60-3ab924e4d675.png)
+![Screenshot 2021-11-08 222652 (1)](https://user-images.githubusercontent.com/45349730/140868460-06bf6017-aa6c-4f09-ae17-110036e9ea75.png)
 
 <br>
 
-![Screenshot 2021-10-21 225400 (1)](https://user-images.githubusercontent.com/45349730/138402507-eaa8bbc5-73d6-4160-b5f0-3342cc8ffdaf.png)\
+![Screenshot 2021-11-08 222906 (1)](https://user-images.githubusercontent.com/45349730/140868564-6172616c-76dd-4ab9-8749-6ab0e8f2477e.png)
 
 <br>
 
-![Screenshot 2021-10-21 225508 (2)](https://user-images.githubusercontent.com/45349730/138402811-9cb275cf-4e34-4704-b7f2-419885512ed0.png)
+![Screenshot 2021-11-08 223041 (1)](https://user-images.githubusercontent.com/45349730/140868621-2d2f37d6-5fb4-4f8e-8fda-1cfe3dc12ae5.png)
 
 <br>
 
-![Screenshot 2021-10-21 225943 (1)](https://user-images.githubusercontent.com/45349730/138402553-d60b4498-ccb1-4d98-9614-5dc017dd61eb.png)
+![Screenshot 2021-11-08 223403 (1)](https://user-images.githubusercontent.com/45349730/140868687-92846777-4d51-4260-8bab-9ed16d9b1f4b.png)
 
-<br>
 
-![Screenshot 2021-10-21 230130 (2)](https://user-images.githubusercontent.com/45349730/138402943-c7e0a1f5-4cb9-4907-b051-af0cf0439eac.png)
+
+
+
 
 
 
