@@ -8,7 +8,7 @@
 <br>
 
 
-WEBSITE SCREENCAPS:
+WEBSITE SCREENSHOTS:
 
 ![Screenshot 2021-11-08 222652 (1)](https://user-images.githubusercontent.com/45349730/140868460-06bf6017-aa6c-4f09-ae17-110036e9ea75.png)
 
